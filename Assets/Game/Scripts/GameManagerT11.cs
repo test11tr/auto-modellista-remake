@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.PlayerSettings;
+using test11;
 
 namespace PG
 {
@@ -13,14 +16,16 @@ namespace PG
     {
         //VehicleList
         [Header("Vehicle References")]
-        [SerializeField] private ScriptableObject[] _scriptableObjects;
+        [SerializeField] private Car[] _scriptableObjects;
 
         //Game Manager Logic
         [Header("Game Scene Settings")]
         public bool startWithVehicle = false;
-        public GameObject playerVehicle;
         public Transform VehicleSpawnPoint;
         bool isInVehicle;
+        private int currentCarIndex;
+        private GameObject p_spawnedPlayerVehicle;
+        public GameObject SpawnedPlayerVehicle => p_spawnedPlayerVehicle;
 
         //Player Controller
         [Header("Player Controller Settings")]
@@ -59,7 +64,18 @@ namespace PG
 
         void HandleVehicleCharacter()
         {
-            isInVehicle = true;
+            
+            if ( _scriptableObjects != null )
+            {
+                //Instantiate Vehicle
+                isInVehicle = true;
+                currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
+                p_spawnedPlayerVehicle = Instantiate(_scriptableObjects[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
+                p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
+
+                HandlePlayerCharacter();
+                EnterCarOnStart();
+            }
         }
 
         void HandlePlayerCharacter()
@@ -159,7 +175,8 @@ namespace PG
                 car = hit.collider.GetComponentInParent<CarController> ();
                 if (car != null)
                 {
-                    isInVehicle = false;
+
+                    isInVehicle = true;
                     gameObject.SetActive (false);
                     PlayerControllerForCar.EnterInCar (car);
                     PlayerControllerForCar.OnExitAction += OnExitFromCar;
@@ -169,6 +186,30 @@ namespace PG
                     Camera.transform.localRotation = Quaternion.identity;
                 }
             }
+        }
+
+        public void EnterCarOnStart()
+        {
+            if (PlayerControllerForCar == null)
+            {
+                PlayerControllerForCar = PlayerController.GetOrCreatePlayerController();
+            }
+
+            if (CameraParentInCar == null)
+            {
+                var carCameraController = PlayerControllerForCar.GetComponentInChildren<CameraController>(true);
+                CameraParentInCar = carCameraController.CameraParentTransform;
+            }
+
+            gameObject.SetActive(false);
+            PlayerControllerForCar.EnterInCar(p_spawnedPlayerVehicle.GetComponent<CarController>());
+            PlayerControllerForCar.OnExitAction += OnExitFromCar;
+            Camera.transform.SetParent(CameraParentInCar);
+
+            Camera.transform.localPosition = Vector3.zero;
+            Camera.transform.localRotation = Quaternion.identity;
+                
+            
         }
 
         public void OnExitFromCar (CarController car)
