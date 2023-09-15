@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
+  m_Name: Nissan Skyline R34
+  m_EditorClassIdentifier: 
+  carIndex: Car0
+  carNumberIndex: 0
+  carName: Nissan Skyline R34
+  carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
+    of a Japanese legend under its hood, this vehicle is a horsepower beast.
+  carPrice: 0
+  carSpeed: 6
+  carAcceleration: 7
+  carHandling: 5
+  carVisualPrefab: {fileID: 9063715114740488226, guid: 767473c7299968f48bb810a0357ad6be, type: 3}
+  carPlayablePrefab: {fileID: 962977379723067260, guid: 62606eb83d5df1f458781e8e28fd377b, type: 3}

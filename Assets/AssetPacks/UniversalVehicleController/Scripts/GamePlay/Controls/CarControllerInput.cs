@@ -173,16 +173,6 @@ namespace PG
                 {
                     GameController.Instance.SetNextCar ();
                 }
-
-                if (Input.GetKeyDown (KeyCode.Equals))
-                {
-                    GameController.Instance.ChangeTimeScale (0.1f);
-                }
-
-                if (Input.GetKeyDown (KeyCode.Minus))
-                {
-                    GameController.Instance.ChangeTimeScale (-0.1f);
-                }
             }
 
             if (Input.touchCount == 0 && !Input.GetMouseButton (0))

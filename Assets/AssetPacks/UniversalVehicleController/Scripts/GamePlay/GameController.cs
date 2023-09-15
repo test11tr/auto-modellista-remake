@@ -16,7 +16,6 @@ namespace PG
     /// </summary>
     public class GameController :Singleton<GameController>
     {
-        public TextMeshProUGUI TimeScaleText;
         public Transform[] StartPositions;
         public List<CarController> AllCars = new List<CarController>();
         public bool m_SplitScreen;
@@ -31,10 +30,6 @@ namespace PG
 
         void Start ()
         {
-            if (TimeScaleText)
-            {
-                TimeScaleText.SetActive (false);
-            }
 
             if (StartPositions == null || StartPositions.Length <= 0)
             {
@@ -146,18 +141,6 @@ namespace PG
         {
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene (scene.buildIndex);
-        }
-
-        public void ChangeTimeScale (float delta)
-        {
-            Time.timeScale = (Time.timeScale + delta).Clamp (0.1f, 2f);
-            if (TimeScaleText)
-            {
-                TimeScaleText.SetActive (!Mathf.Approximately (Time.timeScale, 1));
-                TimeScaleText.text = string.Format ("Time scale: {0}", Time.timeScale);
-            }
-
-            SoundHelper.ChangeSoundTimeScale (Time.timeScale);
         }
     }
 
