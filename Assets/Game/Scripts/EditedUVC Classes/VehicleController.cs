@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
+using test11;
 
 namespace PG
 {
@@ -10,14 +12,12 @@ namespace PG
     /// Main vegicle controller component. 
     /// </summary>
     [RequireComponent (typeof (Rigidbody))]
-    public class VehicleController :MonoBehaviour
+    public class VehicleController :MonoBehaviour, IInteractable
     {
         [Header("VehicleController")]
-#pragma warning disable 0649
-
+        #pragma warning disable 0649
         [SerializeField] bool ShowBoundsGizmo = false;
-
-#pragma warning restore 0649
+        #pragma warning restore 0649
 
         public string VehicleName;
         public Wheel[] Wheels = new Wheel[0];                                           //Wheel object references
@@ -198,6 +198,11 @@ namespace PG
             {
                 Debug.LogError ("VehicleDamageController component not found");
             }
+        }
+
+        public void Interact()
+        {
+            print("It's a vehicle, name is: " + VehicleName);
         }
 
         protected virtual void OnDrawGizmosSelected ()

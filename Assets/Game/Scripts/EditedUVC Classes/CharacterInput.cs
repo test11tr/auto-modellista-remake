@@ -9,6 +9,9 @@ namespace PG
     /// </summary>
     public class CharacterInput :MonoBehaviour
     {
+        [Header("GameManager")]
+        public GameManagerT11 _gameManager;
+
         [Header ("Device input settings")]
         public string HorizontalMoveAxis = "Horizontal";
         public string VerticalMoveAxis = "Vertical";
@@ -36,13 +39,23 @@ namespace PG
             PfrentForUI.SetActive (GameSettings.IsMobilePlatform);
         }
 
+        private void Awake()
+        {
+            if (_gameManager == null)
+            {
+                _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerT11>();
+            }
+        }
+
         private void Update ()
         {
-            if (Input.GetKeyDown (EnterExitKeyboardKey) || Input.GetKeyDown (EnterExitGamepadKey))
-            {
-                OnEntrerInCar.SafeInvoke ();
-            }
 
+            if (Input.GetKeyDown(EnterExitKeyboardKey) || Input.GetKeyDown(EnterExitGamepadKey))
+            {
+                OnEntrerInCar.SafeInvoke();
+            }
+            
+            
             if (MoveStick.IsPressed)
             {
                 MoveInput = MoveStick.InputValue;

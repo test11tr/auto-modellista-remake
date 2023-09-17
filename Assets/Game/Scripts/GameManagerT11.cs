@@ -21,6 +21,7 @@ namespace PG
         //Game Manager Logic
         [Header("Game Scene Settings")]
         public bool startWithVehicle = false;
+        public bool canExitVehicle = false;
         public Transform VehicleSpawnPoint;
         bool isInVehicle;
         private int currentCarIndex;
@@ -59,7 +60,7 @@ namespace PG
             else
             {
                 HandlePlayerCharacter();
-            }  
+            }
         }
 
         void HandleVehicleCharacter()
@@ -69,6 +70,7 @@ namespace PG
             {
                 //Instantiate Vehicle
                 isInVehicle = true;
+
                 currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
                 p_spawnedPlayerVehicle = Instantiate(_scriptableObjects[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
                 p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
