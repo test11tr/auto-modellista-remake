@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactUIContainer: {fileID: 4421729667539427524}
   interactRange: 2
+  _interactionText: {fileID: 2309028502656276934}
 --- !u!1 &4421729667539427524
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,9 +352,9 @@ RectTransform:
   - {fileID: 3392669240777523608}
   m_Father: {fileID: 4211345032403889759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -161.97}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4779613126631224780
@@ -421,7 +422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: F
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc2cc93475f76427c86a8262bee36b88, type: 2}
   m_sharedMaterial: {fileID: 2269793554123077917, guid: dc2cc93475f76427c86a8262bee36b88, type: 2}
@@ -826,7 +827,7 @@ Transform:
   m_GameObject: {fileID: 5866151477520428827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.403, y: 0.405, z: 0}
+  m_LocalPosition: {x: -8.15, y: 0.405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1231,6 +1232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6798180822372954331}
   - component: {fileID: 5762109097762966522}
+  - component: {fileID: 8080019521470550400}
   m_Layer: 0
   m_Name: T11-GameManager
   m_TagString: GameManager
@@ -1271,8 +1273,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   sceneType: 0
-  _car: []
-  startWithVehicle: 0
+  _car:
+  - {fileID: 11400000, guid: 056f01b625496cc4aab4fd88717db0dc, type: 2}
+  startWithVehicle: 1
+  startInVehicle: 0
   canExitVehicle: 0
   VehicleSpawnPoint: {fileID: 6790180820623715292}
   CharacterController: {fileID: 2355380612638815179}
@@ -1286,6 +1290,21 @@ MonoBehaviour:
   CameraParentInCar: {fileID: 0}
   PlayerControllerForCar: {fileID: 0}
   drawGizmos: 1
+--- !u!114 &8080019521470550400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7891954746147185007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac053e893d6b4d469cdf3f8c35578a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactUIContainer: {fileID: 4421729667539427524}
+  interactRange: 2
+  _interactionText: {fileID: 2309028502656276934}
 --- !u!1 &7972489169690444421
 GameObject:
   m_ObjectHideFlags: 0

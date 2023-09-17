@@ -16,6 +16,7 @@ namespace PG
     {
         [Header("GameManager")]
         public GameManagerT11 _gameManager;
+        public string interactionText = "Interact";
 
         [Header("VehicleController")]
         #pragma warning disable 0649
@@ -208,15 +209,38 @@ namespace PG
             }
         }
 
+        //INTERACT INTERFACE
+
         public void Interact()
         {
-            print("It's a vehicle, name is: " + VehicleName);
-            if(_gameManager.sceneType == GameManagerT11.SceneTypes.Garage)
+            if (_gameManager.sceneType == GameManagerT11.SceneTypes.Garage)
             {
 
             }
-
         }
+
+        public string GetInteractionText()
+        {
+            if (_gameManager.sceneType == GameManagerT11.SceneTypes.Garage)
+            {
+                return interactionText = "Select Vehicle";
+            }else if (_gameManager.sceneType == GameManagerT11.SceneTypes.VehicleTuner){
+                return interactionText = "Tuner Menu";
+            }
+            else if (_gameManager.sceneType == GameManagerT11.SceneTypes.VehicleDealer){
+                return interactionText = "Vehicle Details";
+            }
+            else if (_gameManager.sceneType == GameManagerT11.SceneTypes.Race){
+                return interactionText = "Race ";
+            }
+            else if (_gameManager.sceneType == GameManagerT11.SceneTypes.OpenWorld){
+                return interactionText = "Get In ";
+            }
+
+            return interactionText = "Interact";
+        }
+
+        ///
 
         protected virtual void OnDrawGizmosSelected ()
         {

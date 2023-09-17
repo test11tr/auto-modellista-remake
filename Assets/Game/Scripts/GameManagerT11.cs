@@ -12,6 +12,7 @@ namespace PG
     /// <summary>
     /// This component is for demonstration purposes only. You can replace this component with any third party asset.
     /// </summary>
+    [RequireComponent(typeof(Interactor))]
     public class GameManagerT11 : Singleton<GameManagerT11>
     {
         //VehicleList
@@ -109,7 +110,10 @@ namespace PG
                 p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
 
                 HandlePlayerCharacter();
-                EnterCarOnStart();
+                if (startInVehicle)
+                {
+                    EnterCarOnStart();
+                }
             }
         }
 

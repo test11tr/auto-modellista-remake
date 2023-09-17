@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using test11;
 using UnityEngine;
 
 namespace PG
@@ -7,6 +8,7 @@ namespace PG
     /// <summary>
     /// A class for initializing player objects (such as camera, UI, etc.).
     /// </summary>
+    [RequireComponent(typeof(Interactor))]
     public class PlayerController :InitializePlayer
     {
 #pragma warning disable 0649

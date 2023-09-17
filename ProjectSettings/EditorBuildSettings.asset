@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/P_OpenWorld.unity
+    guid: 03d06c0457d2f6d4aab91e9c03f7171e
+  - enabled: 1
+    path: Assets/Scenes/P_Garage.unity
+    guid: fc607cd699c3a407b96234cfb0530594
+  - enabled: 1
+    path: Assets/Scenes/P_Dealer.unity
+    guid: 5e15a3420d3ef4698bd5c35824c96f94
+  - enabled: 1
+    path: Assets/Scenes/P_Tuner.unity
+    guid: 13d5ed3771c404fb8a79ed53bd68fba7
   m_configObjects: {}

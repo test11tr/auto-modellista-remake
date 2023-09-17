@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using PG;
 
 namespace test11
 {
     interface IInteractable
     {
+        string GetInteractionText();
         void Interact();
     }
 
@@ -14,7 +17,7 @@ namespace test11
     {
         [SerializeField] private GameObject interactUIContainer;
         public float interactRange;
-        bool UIAvailable;
+        public TMP_Text _interactionText;
 
         void Update()
         {
@@ -26,6 +29,7 @@ namespace test11
             {
                 if (collider.TryGetComponent(out IInteractable interactObj))
                 {
+                    _interactionText.text = interactObj.GetInteractionText();
                     anyInteractable = true;
                     if (Input.GetKeyDown(KeyCode.E))
                     {
