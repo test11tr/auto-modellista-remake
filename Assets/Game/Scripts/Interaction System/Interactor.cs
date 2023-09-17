@@ -7,26 +7,45 @@ namespace test11
 {
     interface IInteractable
     {
-        public void Interact();
+        void Interact();
     }
 
     public class Interactor : MonoBehaviour
     {
-        public Transform InteracterSource;
-        public float InteractRange;
+        [SerializeField] private GameObject interactUIContainer;
+        public float interactRange;
+        bool UIAvailable;
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+
+            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+            bool anyInteractable = false;
+
+            foreach (Collider collider in colliderArray)
             {
-                Ray r = new Ray(InteracterSource.position, InteracterSource.forward);
-                if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+                if (collider.TryGetComponent(out IInteractable interactObj))
                 {
-                    if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+                    anyInteractable = true;
+                    if (Input.GetKeyDown(KeyCode.E))
                     {
                         interactObj.Interact();
                     }
                 }
+            }
+
+            handleUI(anyInteractable);
+        }
+
+        private void handleUI(bool interactable)
+        {
+            if (interactable)
+            {
+                interactUIContainer.SetActive(true);
+            }
+            else
+            {
+                interactUIContainer.SetActive(false);
             }
         }
     }
