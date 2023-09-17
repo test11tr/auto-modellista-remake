@@ -14,6 +14,9 @@ namespace PG
     [RequireComponent (typeof (Rigidbody))]
     public class VehicleController :MonoBehaviour, IInteractable
     {
+        [Header("GameManager")]
+        public GameManagerT11 _gameManager;
+
         [Header("VehicleController")]
         #pragma warning disable 0649
         [SerializeField] bool ShowBoundsGizmo = false;
@@ -83,6 +86,11 @@ namespace PG
 
         protected virtual void Awake ()
         {
+            if (_gameManager == null)
+            {
+                _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerT11>();
+            }
+
             RB = GetComponent<Rigidbody> ();
             RB.centerOfMass = COM.localPosition;
 
@@ -203,6 +211,11 @@ namespace PG
         public void Interact()
         {
             print("It's a vehicle, name is: " + VehicleName);
+            if(_gameManager.sceneType == GameManagerT11.SceneTypes.Garage)
+            {
+
+            }
+
         }
 
         protected virtual void OnDrawGizmosSelected ()

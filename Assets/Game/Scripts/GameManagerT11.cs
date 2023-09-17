@@ -15,12 +15,30 @@ namespace PG
     public class GameManagerT11 : Singleton<GameManagerT11>
     {
         //VehicleList
-        [Header("Vehicle References")]
-        [SerializeField] private Car[] _scriptableObjects;
+        [Header("Scene Definiton")]
+        [Tooltip("Araçlarla olacak etkileşim burada seçilen sahne tipine göre çalışmaktadır. Doğru ayarlanabilmesi önemlidir.")]
+        public SceneTypes sceneType; 
+        public enum SceneTypes
+        {
+            OpenWorld,
+            Race,
+            Garage,
+            VehicleDealer,
+            VehicleTuner
+        }
+
+        //VehicleList
+        [Header("Override Spawning Player Vehicle")]
+        [Tooltip("Buraya bir araç koyulursa sahne açıldığında kullanıcının aracı yerine koyulan araç spawn edilir.")]
+        [SerializeField] private Car[] _car;
 
         //Game Manager Logic
         [Header("Game Scene Settings")]
+        [Tooltip("Seçenek işaretliyse bölüme araç kontrolcüsü ile başlanılır.")]
         public bool startWithVehicle = false;
+        [Tooltip("Seçenek işaretliyse bölüme araç spawn edilir ancak first person kontrolcü ile başlanılır.")]
+        public bool startInVehicle = false;
+        [Tooltip("Seçenek işaretliyse bölümde araçtan inilemez.")]
         public bool canExitVehicle = false;
         public Transform VehicleSpawnPoint;
         bool isInVehicle;
@@ -66,13 +84,28 @@ namespace PG
         void HandleVehicleCharacter()
         {
             
-            if ( _scriptableObjects != null )
+            if ( _car == null )
             {
-                //Instantiate Vehicle
+                //Instantiate Vehicle from Data
+
+                isInVehicle = true;
+                currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
+                p_spawnedPlayerVehicle = Instantiate(_car[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
+                p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
+
+                HandlePlayerCharacter();
+                if (startInVehicle)
+                {
+                    EnterCarOnStart();
+                }
+            }
+            else
+            {
+                //Instantiate Vehicle Scene Override
                 isInVehicle = true;
 
                 currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
-                p_spawnedPlayerVehicle = Instantiate(_scriptableObjects[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
+                p_spawnedPlayerVehicle = Instantiate(_car[0].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
                 p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
 
                 HandlePlayerCharacter();
