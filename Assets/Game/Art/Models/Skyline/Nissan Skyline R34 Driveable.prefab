@@ -1747,6 +1747,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4769193903886470041, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015163881769946531, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810575813770682841, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851485263124964264, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187961979067505143, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.197
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187961979067505143, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187961979067505143, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.853
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390863259021685353, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7088558658320364917, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -1754,6 +1786,10 @@ PrefabInstance:
     - target: {fileID: 8004169618456367547, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941830381668471752, guid: 6e6cff603abe9ef49a2cd09f5c34d7fd, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -29,9 +29,11 @@ namespace PG
         }
 
         //VehicleList
-        [Header("Override Spawning Player Vehicle")]
+        [Header("Player Vehicles")]
+        [SerializeField] private Car[] _playerCars;
+        [Header("Override Vehicle")]
         [Tooltip("Buraya bir araç koyulursa sahne açıldığında kullanıcının aracı yerine koyulan araç spawn edilir.")]
-        [SerializeField] private Car[] _car;
+        [SerializeField] private Car _overrideVehicle;
 
         //Game Manager Logic
         [Header("Game Scene Settings")]
@@ -85,13 +87,13 @@ namespace PG
         void HandleVehicleCharacter()
         {
             
-            if ( _car == null )
+            if (_overrideVehicle == null )
             {
                 //Instantiate Vehicle from Data
 
                 isInVehicle = true;
                 currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
-                p_spawnedPlayerVehicle = Instantiate(_car[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
+                p_spawnedPlayerVehicle = Instantiate(_playerCars[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
                 p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
 
                 HandlePlayerCharacter();
@@ -104,9 +106,7 @@ namespace PG
             {
                 //Instantiate Vehicle Scene Override
                 isInVehicle = true;
-
-                currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
-                p_spawnedPlayerVehicle = Instantiate(_car[0].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
+                p_spawnedPlayerVehicle = Instantiate(_overrideVehicle.carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
                 p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
 
                 HandlePlayerCharacter();
