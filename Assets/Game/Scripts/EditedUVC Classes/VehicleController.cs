@@ -8,14 +8,10 @@ using test11;
 
 namespace PG
 {
-    /// <summary>
-    /// Main vegicle controller component. 
-    /// </summary>
     [RequireComponent (typeof (Rigidbody))]
     public class VehicleController :MonoBehaviour, IInteractable
     {
         [Header("GameManager")]
-        public GameManagerT11 _gameManager;
         public string interactionText = "Interact";
 
         [Header("VehicleController")]
@@ -87,10 +83,6 @@ namespace PG
 
         protected virtual void Awake ()
         {
-            if (_gameManager == null)
-            {
-                _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerT11>();
-            }
 
             RB = GetComponent<Rigidbody> ();
             RB.centerOfMass = COM.localPosition;
@@ -213,7 +205,7 @@ namespace PG
 
         public void Interact()
         {
-            if (_gameManager.sceneType == GameManagerT11.SceneTypes.Garage)
+            if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Garage)
             {
 
             }
@@ -221,19 +213,19 @@ namespace PG
 
         public string GetInteractionText()
         {
-            if (_gameManager.sceneType == GameManagerT11.SceneTypes.Garage)
+            if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Garage)
             {
                 return interactionText = "Select Vehicle";
-            }else if (_gameManager.sceneType == GameManagerT11.SceneTypes.VehicleTuner){
+            }else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleTuner){
                 return interactionText = "Tuner Menu";
             }
-            else if (_gameManager.sceneType == GameManagerT11.SceneTypes.VehicleDealer){
+            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleDealer){
                 return interactionText = "Vehicle Details";
             }
-            else if (_gameManager.sceneType == GameManagerT11.SceneTypes.Race){
+            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Race){
                 return interactionText = "Race ";
             }
-            else if (_gameManager.sceneType == GameManagerT11.SceneTypes.OpenWorld){
+            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.OpenWorld){
                 return interactionText = "Get In ";
             }
 

@@ -9,12 +9,9 @@ namespace test11
 {
     public class InteractableZone : MonoBehaviour, IInteractable
     {
-        [Header("GameManager")]
-        public GameManagerT11 _gameManager;
         public string interactionText = "Interact";
-
         [Header("Load Scene")]
-        [Tooltip("Etkileþime geçilebilecek sahne seçenekleri.")]
+        [Tooltip("Etkilesime gecilebilecek sahne secenekleri.")]
         public SceneTypes sceneType;
         public enum SceneTypes
         {
@@ -29,10 +26,6 @@ namespace test11
 
         void Awake()
         {
-            if (_gameManager == null)
-            {
-                _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerT11>();
-            }
         }
 
         //INTERACT INTERFACE

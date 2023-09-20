@@ -9,10 +9,6 @@ using test11;
 
 namespace PG
 {
-    /// <summary>
-    /// This component is for demonstration purposes only. You can replace this component with any third party asset.
-    /// </summary>
-    [RequireComponent(typeof(Interactor))]
     public class GameManagerT11 : Singleton<GameManagerT11>
     {
         //VehicleList
@@ -44,7 +40,7 @@ namespace PG
         [Tooltip("Seçenek işaretliyse bölümde araçtan inilemez.")]
         public bool canExitVehicle = false;
         public Transform VehicleSpawnPoint;
-        bool isInVehicle;
+        public bool isInVehicle;
         private int currentCarIndex;
         private GameObject p_spawnedPlayerVehicle;
         public GameObject SpawnedPlayerVehicle => p_spawnedPlayerVehicle;
@@ -206,17 +202,19 @@ namespace PG
                 CameraParentInCar = carCameraController.CameraParentTransform;
             }
 
-            CarController car;
-            RaycastHit hit;
+            Collider[] colliderArray = Physics.OverlapSphere(Camera.transform.position, 2);
 
-            if (Physics.Raycast (Camera.transform.position, Camera.transform.forward, out hit, 2))
+            foreach (Collider collider in colliderArray)
             {
-                car = hit.collider.GetComponentInParent<CarController> ();
-                if (car != null)
+                if (collider.TryGetComponent(out CarController car))
                 {
-
                     isInVehicle = true;
-                    gameObject.SetActive (false);
+                    //gameObject.SetActive (false);
+                    CharacterController.gameObject.SetActive(false);
+                    Input.SetActive(false);
+                    CameraVerticlaAngle = 0;
+                    StopAllCoroutines();
+
                     PlayerControllerForCar.EnterInCar (car);
                     PlayerControllerForCar.OnExitAction += OnExitFromCar;
                     Camera.transform.SetParent (CameraParentInCar);
@@ -240,7 +238,12 @@ namespace PG
                 CameraParentInCar = carCameraController.CameraParentTransform;
             }
 
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            CharacterController.gameObject.SetActive(false);
+            Input.SetActive(false);
+            CameraVerticlaAngle = 0;
+            StopAllCoroutines();
+
             PlayerControllerForCar.EnterInCar(p_spawnedPlayerVehicle.GetComponent<CarController>());
             PlayerControllerForCar.OnExitAction += OnExitFromCar;
             Camera.transform.SetParent(CameraParentInCar);
@@ -266,7 +269,9 @@ namespace PG
 
             transform.position = car.transform.position + offsetPos;
             transform.rotation = Quaternion.LookRotation (car.transform.forward.ZeroHeight (), Vector3.up);
-            gameObject.SetActive (true);
+            //gameObject.SetActive (true);
+            CharacterController.gameObject.SetActive(true);
+            Input.SetActive(true);
 
             if (!Camera)
             {

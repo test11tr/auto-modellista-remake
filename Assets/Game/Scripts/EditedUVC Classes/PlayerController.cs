@@ -5,10 +5,6 @@ using UnityEngine;
 
 namespace PG
 {
-    /// <summary>
-    /// A class for initializing player objects (such as camera, UI, etc.).
-    /// </summary>
-    [RequireComponent(typeof(Interactor))]
     public class PlayerController :InitializePlayer
     {
 #pragma warning disable 0649

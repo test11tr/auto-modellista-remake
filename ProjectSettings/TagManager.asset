@@ -8,6 +8,7 @@ TagManager:
   - PlayerVehicle
   - AIVehicle
   - GameManager
+  - InteractionSystem
   layers:
   - Default
   - TransparentFX

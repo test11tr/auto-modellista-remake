@@ -4,13 +4,9 @@ using UnityEngine;
 
 namespace PG
 {
-    /// <summary>
-    /// For character input, UI input and device input are combined in this component.
-    /// </summary>
     public class CharacterInput :MonoBehaviour
     {
         [Header("GameManager")]
-        public GameManagerT11 _gameManager;
 
         [Header ("Device input settings")]
         public string HorizontalMoveAxis = "Horizontal";
@@ -39,13 +35,6 @@ namespace PG
             PfrentForUI.SetActive (GameSettings.IsMobilePlatform);
         }
 
-        private void Awake()
-        {
-            if (_gameManager == null)
-            {
-                _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerT11>();
-            }
-        }
 
         private void Update ()
         {
