@@ -84,14 +84,27 @@ namespace PG
         {
             if (isInVehicle)
             {
-                Interactor.Instance.transform.position = p_spawnedPlayerVehicle.transform.position;
-                Interactor.Instance.CheckForInteraction(6);
+                HandleInteractorInVehicle();
             }
             else
             {
-                Interactor.Instance.transform.position = CharacterController.transform.position;
-                Interactor.Instance.CheckForInteraction(-1);
+                HandleInteractorAndPlayerControls();
+            }
+        }
 
+        void HandleInteractorInVehicle()
+        {
+            Interactor.Instance.transform.position = p_spawnedPlayerVehicle.transform.position;
+            Interactor.Instance.CheckForInteraction(6);
+        }
+
+        void HandleInteractorAndPlayerControls()
+        {
+            Interactor.Instance.transform.position = CharacterController.transform.position;
+            Interactor.Instance.CheckForInteraction(-1);
+
+            if (CharacterController.gameObject.activeSelf)
+            {
                 //Move character
                 Vector3 moveDelta = Input.MoveInput.y * CharacterController.transform.forward;
                 moveDelta += Input.MoveInput.x * CharacterController.transform.right;
@@ -99,7 +112,6 @@ namespace PG
 
                 //Rotate character and camera
                 Vector2 viewDelta = Input.ViewInput;
-
                 CharacterController.transform.rotation *= Quaternion.AngleAxis(viewDelta.x, Vector3.up);
 
                 //Rotate the Camera by Vertical axis
@@ -110,34 +122,20 @@ namespace PG
 
         void HandleVehicleCharacter()
         {
-            
-            if (_overrideVehicle == null )
-            {
-                //Instantiate Vehicle from Data
+            isInVehicle = true;
+            currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
 
-                isInVehicle = true;
-                currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
+            if (_overrideVehicle == null)
                 p_spawnedPlayerVehicle = Instantiate(_playerCars[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
-                p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
-
-                HandlePlayerCharacter();
-                if (startInVehicle)
-                {
-                    EnterCarOnStart();
-                }
-            }
             else
-            {
-                //Instantiate Vehicle Scene Override
-                isInVehicle = true;
                 p_spawnedPlayerVehicle = Instantiate(_overrideVehicle.carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
-                p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
 
-                HandlePlayerCharacter();
-                if (startInVehicle)
-                {
-                    EnterCarOnStart();
-                }
+            p_spawnedPlayerVehicle.transform.rotation = Quaternion.LookRotation(VehicleSpawnPoint.transform.forward, Vector3.up);
+
+            HandlePlayerCharacter();
+            if (startInVehicle)
+            {
+                EnterCarOnStart();
             }
         }
 
@@ -183,24 +181,24 @@ namespace PG
 
         public void TryEnterCar ()
         {
-            if (PlayerControllerForCar == null)
-            {
-                PlayerControllerForCar = PlayerController.GetOrCreatePlayerController();
-            }
-
-            if (CameraParentInCar == null)
-            {
-                var carCameraController = PlayerControllerForCar.GetComponentInChildren<CameraController> (true);
-                CameraParentInCar = carCameraController.CameraParentTransform;
-            }
-
             Collider[] colliderArray = Physics.OverlapSphere(Camera.transform.position, 2);
-
             foreach (Collider collider in colliderArray)
             {
                 if (collider.TryGetComponent(out CarController car))
                 {
                     isInVehicle = true;
+
+                    if (PlayerControllerForCar == null)
+                    {
+                        PlayerControllerForCar = PlayerController.GetOrCreatePlayerController();
+                    }
+
+                    if (CameraParentInCar == null)
+                    {
+                        var carCameraController = PlayerControllerForCar.GetComponentInChildren<CameraController>(true);
+                        CameraParentInCar = carCameraController.CameraParentTransform;
+                    }
+
                     //gameObject.SetActive (false);
                     CharacterController.gameObject.SetActive(false);
                     Input.SetActive(false);

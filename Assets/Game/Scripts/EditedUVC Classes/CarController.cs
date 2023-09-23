@@ -144,7 +144,6 @@ namespace PG
             if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.OpenWorld)
             {
                 GameManagerT11.Instance.TryEnterCar();
-                print("here");
             }
         }
 
