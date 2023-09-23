@@ -668,8 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05369f4e48a95d4089d518e01717c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: Interact
-  sceneType: 0
+  sceneType: 3
+  _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
 --- !u!1 &1904166338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1540,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1

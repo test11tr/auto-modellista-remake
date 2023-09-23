@@ -9,25 +9,24 @@ namespace test11
 {
     public class InteractableZone : MonoBehaviour, IInteractable
     {
-        [HideInInspector]
-        public string interactionText = "Interact";
-        [Header("Load Scene")]
+        [Header("Interaction Zone")]
         [Tooltip("Etkilesime gecilebilecek sahne secenekleri.")]
         public SceneTypes sceneType;
         public enum SceneTypes
         {
-            ToRace,
-            ToGarage,
-            ExitGarage,
-            ToVehicleDealer,
-            ExitVehicleDealer,
-            ToVehicleTuner,
-            ExitVehicleTuner
+            RaceTrigger,
+            GarageTrigger,
+            GarageExitTrigger,
+            CarDealerTrigger,
+            CarDealerExitTrigger,
+            CarTunerTrigger,
+            CarTunerExitTrigger
         }
 
-        void Awake()
-        {
-        }
+        [Header("Interaction Text Data")]
+        public InteractionText _interactTextData;
+        string interactionText;
+
 
         //INTERACT INTERFACE
 
@@ -38,39 +37,38 @@ namespace test11
 
         public string GetInteractionText()
         {
-            if (sceneType == SceneTypes.ToRace)
+            if (sceneType == SceneTypes.RaceTrigger)
             {
-                return interactionText = "Race!";
+                return interactionText = _interactTextData.RaceTriggerText;
             }
-            else if (sceneType == SceneTypes.ToGarage)
+            else if (sceneType == SceneTypes.GarageTrigger)
             {
-                return interactionText = "Enter Garage";
+                return interactionText = _interactTextData.GarageTriggerText;
             }
-            else if (sceneType == SceneTypes.ExitGarage)
+            else if (sceneType == SceneTypes.GarageExitTrigger)
             {
-                return interactionText = "Exit Garage";
+                return interactionText = _interactTextData.GarageExitTriggerText;
             }
-            else if (sceneType == SceneTypes.ToVehicleDealer)
+            else if (sceneType == SceneTypes.CarDealerTrigger)
             {
-                return interactionText = "Enter Vehicle Dealer";
+                return interactionText = _interactTextData.CarDealerTriggerrText;
+            }
+            else if (sceneType == SceneTypes.CarDealerExitTrigger)
+            {
+                return interactionText = _interactTextData.CarDealerExitTriggerText;
+            }
+            else if (sceneType == SceneTypes.CarTunerTrigger)
+            {
+                return interactionText = _interactTextData.CarTunerTriggerText;
+            }
+            else if (sceneType == SceneTypes.CarTunerExitTrigger)
+            {
+                return interactionText = _interactTextData.CarTunerExitTriggerText;
+            }
 
-            }
-            else if (sceneType == SceneTypes.ExitVehicleDealer)
-            {
-                return interactionText = "Exit Vehicle Dealer";
-            }
-            else if (sceneType == SceneTypes.ToVehicleTuner)
-            {
-                return interactionText = "Enter Vehicle Tuner";
-            }
-            else if (sceneType == SceneTypes.ExitVehicleTuner)
-            {
-                return interactionText = "Exit Vehicle Tuner";
-            }
-
-            return interactionText = "Interact";
+            return interactionText = _interactTextData.defaultText;
         }
 
-        ///
+        //
     }
 }
