@@ -302,7 +302,6 @@ namespace PG
                 Gizmos.DrawRay(PlayerSpawnPoint.transform.position + PlayerSpawnPoint.transform.forward, plyleft * 0.25f);
                 Handles.Label(PlayerSpawnPoint.transform.position + Vector3.up * .2f, "Player Spawn Position");
             }
-
         }
     }
 }
