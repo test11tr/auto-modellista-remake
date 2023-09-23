@@ -7,7 +7,7 @@ namespace test11
     [CreateAssetMenu(fileName = "New Interaction Text Data", menuName = "T11/Interaction")]
     public class InteractionText : ScriptableObject
     {
-        [Header("Interaction Texts")]
+        [Header("Interaction Zone Texts")]
         public string RaceTriggerText;
         public string GarageTriggerText;
         public string GarageExitTriggerText;
@@ -15,6 +15,15 @@ namespace test11
         public string CarDealerExitTriggerText;
         public string CarTunerTriggerText;
         public string CarTunerExitTriggerText;
+
+        [Header("Vehicle Interaction Texts")]
+        public string InRaceAreaText;
+        public string InOpenWorldText;
+        public string InGarageText;
+        public string InDealerText;
+        public string InTunerText;
+
+        [Header("Default Text")]
         public string defaultText;
     }
 }

@@ -14,9 +14,6 @@ namespace PG
     [RequireComponent (typeof (Rigidbody))]
     public partial class CarController :VehicleController, IInteractable
     {
-        [HideInInspector]
-        public string interactionText = "Interact";
-
         [Header("CarController")]
 
         public LayerMask TrailerConnectorMask;
@@ -33,6 +30,10 @@ namespace PG
         public TrailerController NearestTrailer { get; private set; }
         public ICarControl CarControl { get; set; }                                     //ICarControll controls the car.
         public bool BlockControl { get; protected set; }                                //Blocks input.
+
+        [Header("Interaction Text Data")]
+        public InteractionText _interactTextData;
+        string interactionText;
 
         protected override void Awake ()
         {
@@ -151,26 +152,26 @@ namespace PG
         {
             if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Garage)
             {
-                return interactionText = "Select Vehicle";
+                return interactionText = _interactTextData.InGarageText;
             }
             else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleTuner)
             {
-                return interactionText = "Tuner Menu";
+                return interactionText = _interactTextData.InTunerText;
             }
             else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleDealer)
             {
-                return interactionText = "Vehicle Details";
+                return interactionText = _interactTextData.InDealerText;
             }
             else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Race)
             {
-                return interactionText = "Race ";
+                return interactionText = _interactTextData.InRaceAreaText;
             }
             else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.OpenWorld)
             {
-                return interactionText = "Get In ";
+                return interactionText = _interactTextData.InOpenWorldText;
             }
 
-            return interactionText = "Interact";
+            return interactionText = _interactTextData.defaultText;
         }
 
         ///

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b84cd6818996ee42bcd4cb614fb50fb, type: 3}
   m_Name: InteractionTextData
   m_EditorClassIdentifier: 
-  interactionText: 
   RaceTriggerText: Enter Race!
   GarageTriggerText: Enter Garage
   GarageExitTriggerText: Exit Garage
@@ -20,4 +19,9 @@ MonoBehaviour:
   CarDealerExitTriggerText: Exit Vehicle Dealer
   CarTunerTriggerText: Enter Vehicle Tuner
   CarTunerExitTriggerText: Exit Vehicle Tuner
+  InRaceAreaText: Race!
+  InOpenWorldText: Drive!
+  InGarageText: Get in!
+  InDealerText: Inspect  Vehicle
+  InTunerText: Tuning Menu
   defaultText: Interaction
