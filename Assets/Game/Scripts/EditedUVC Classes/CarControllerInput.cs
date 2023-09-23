@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using test11;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -421,7 +422,7 @@ namespace PG
 
         public void TryExitFromCar ()
         {
-            if(GameManagerT11.Instance.canExitVehicle)
+            if(GameManagerT11.Instance.canExitVehicle && !Interactor.Instance.interactionAvailable)
             {
                 var playerController = GetComponentInParent<PlayerController>();
                 if (playerController != null)

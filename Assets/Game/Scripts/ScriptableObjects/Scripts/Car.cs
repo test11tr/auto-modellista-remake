@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace test11
 {
-    [CreateAssetMenu(fileName = "New Car", menuName = "T11/Car")]
+    [CreateAssetMenu(fileName = "New Car", menuName = "T11/CarData")]
     public class Car : ScriptableObject
     {
        [Header("Car Info")]

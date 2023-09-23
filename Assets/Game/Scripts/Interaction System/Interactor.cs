@@ -18,6 +18,7 @@ namespace test11
         [SerializeField] private GameObject interactUIContainer;
         public float interactRange;
         public TMP_Text _interactionText;
+        [HideInInspector] public bool interactionAvailable;
 
         public void CheckForInteraction(int playerState)
         {
@@ -29,12 +30,17 @@ namespace test11
             {
                 if (collider.TryGetComponent(out IInteractable interactObj))
                 {
+                    interactionAvailable = true;
                     _interactionText.text = interactObj.GetInteractionText();
                     anyInteractable = true;
                     if (Input.GetKeyDown(KeyCode.F))
                     {
                         interactObj.Interact();
                     }
+                }
+                else
+                {
+                    interactionAvailable = false;
                 }
             }
             handleUI(anyInteractable);

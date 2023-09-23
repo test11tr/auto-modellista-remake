@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b72b03d1206454bb7909a12541bd4a, type: 3}
+  m_Name: InteractionSceneData
+  m_EditorClassIdentifier: 
+  OpenWorld: P_OpenWorld
+  Garage_1: 
+  Garage_2: 
+  Garage_3: 
+  Dealer_1: P_VehicleDealer
+  Dealer_2: 
+  Dealer_3: 
+  Tuner_1: 
+  Tuner_2: 
+  Tuner_3: 

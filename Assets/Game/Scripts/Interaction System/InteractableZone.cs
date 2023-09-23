@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using test11;
 using PG;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 namespace test11
@@ -16,23 +17,66 @@ namespace test11
         {
             RaceTrigger,
             GarageTrigger,
-            GarageExitTrigger,
             CarDealerTrigger,
-            CarDealerExitTrigger,
             CarTunerTrigger,
-            CarTunerExitTrigger
+            OpenWorldTrigger
         }
 
-        [Header("Interaction Text Data")]
+        [Header("Interaction Datas")]
         public InteractionText _interactTextData;
+        public InteractionScene _interactSceneData;
+        public TMP_Text interact3DText;
         string interactionText;
+        string levelName;
 
+        private void Start()
+        {
+            if (sceneType == SceneTypes.RaceTrigger)
+            {
+                interact3DText.text = _interactTextData.RaceTrigger3DText;
+            }
+            else if (sceneType == SceneTypes.GarageTrigger)
+            {
+                interact3DText.text = _interactTextData.GarageTrigger3DText;
+            }
+            else if (sceneType == SceneTypes.CarDealerTrigger)
+            {
+                interact3DText.text = _interactTextData.CarDealerTrigger3DText;
+            }
+            else if (sceneType == SceneTypes.CarTunerTrigger)
+            {
+                interact3DText.text = _interactTextData.CarTunerTrigger3DText;
+            }
+            else
+            {
+                interact3DText.text = "";
+            }
+        }
 
         //INTERACT INTERFACE
 
         public void Interact()
         {
-            //SceneManager.LoadScene();
+            if (sceneType == SceneTypes.RaceTrigger)
+            {
+                //
+            }
+            else if (sceneType == SceneTypes.GarageTrigger)
+            {
+                //
+            }
+            else if (sceneType == SceneTypes.CarDealerTrigger)
+            {
+                SceneManager.LoadScene(_interactSceneData.Dealer_1);
+            }
+            else if (sceneType == SceneTypes.CarTunerTrigger)
+            {
+                //
+            }
+            else if (sceneType == SceneTypes.OpenWorldTrigger)
+            {
+                SceneManager.LoadScene(_interactSceneData.OpenWorld);
+            }
         }
 
         public string GetInteractionText()
@@ -45,25 +89,17 @@ namespace test11
             {
                 return interactionText = _interactTextData.GarageTriggerText;
             }
-            else if (sceneType == SceneTypes.GarageExitTrigger)
-            {
-                return interactionText = _interactTextData.GarageExitTriggerText;
-            }
             else if (sceneType == SceneTypes.CarDealerTrigger)
             {
-                return interactionText = _interactTextData.CarDealerTriggerrText;
-            }
-            else if (sceneType == SceneTypes.CarDealerExitTrigger)
-            {
-                return interactionText = _interactTextData.CarDealerExitTriggerText;
+                return interactionText = _interactTextData.CarDealerTriggerText;
             }
             else if (sceneType == SceneTypes.CarTunerTrigger)
             {
                 return interactionText = _interactTextData.CarTunerTriggerText;
             }
-            else if (sceneType == SceneTypes.CarTunerExitTrigger)
+            else if (sceneType == SceneTypes.OpenWorldTrigger)
             {
-                return interactionText = _interactTextData.CarTunerExitTriggerText;
+                return interactionText = _interactTextData.OpenWorldTrigger;
             }
 
             return interactionText = _interactTextData.defaultText;
