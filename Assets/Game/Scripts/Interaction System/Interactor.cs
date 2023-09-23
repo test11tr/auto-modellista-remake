@@ -13,52 +13,31 @@ namespace test11
         void Interact();
     }
 
-    public class Interactor : MonoBehaviour
+    public class Interactor : Singleton<Interactor>
     {
         [SerializeField] private GameObject interactUIContainer;
         public float interactRange;
         public TMP_Text _interactionText;
 
-        void Update()
+        public void CheckForInteraction(int playerState)
         {
-            if (GameManagerT11.Instance.isInVehicle)
-            {
-                Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange,6);
-                bool anyInteractable = false;
+            int layerMask = 1 << playerState;
+            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange, ~layerMask);
+            bool anyInteractable = false;
 
-                foreach (Collider collider in colliderArray)
+            foreach (Collider collider in colliderArray)
+            {
+                if (collider.TryGetComponent(out IInteractable interactObj))
                 {
-                    if (collider.TryGetComponent(out IInteractable interactObj))
+                    _interactionText.text = interactObj.GetInteractionText();
+                    anyInteractable = true;
+                    if (Input.GetKeyDown(KeyCode.F))
                     {
-                        _interactionText.text = interactObj.GetInteractionText();
-                        anyInteractable = true;
-                        if (Input.GetKeyDown(KeyCode.E))
-                        {
-                            interactObj.Interact();
-                        }
+                        interactObj.Interact();
                     }
                 }
-                handleUI(anyInteractable);
             }
-            else
-            {
-                Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-                bool anyInteractable = false;
-
-                foreach (Collider collider in colliderArray)
-                {
-                    if (collider.TryGetComponent(out IInteractable interactObj))
-                    {
-                        _interactionText.text = interactObj.GetInteractionText();
-                        anyInteractable = true;
-                        if (Input.GetKeyDown(KeyCode.E))
-                        {
-                            interactObj.Interact();
-                        }
-                    }
-                }
-                handleUI(anyInteractable);
-            } 
+            handleUI(anyInteractable);
         }
 
         private void handleUI(bool interactable)

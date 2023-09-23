@@ -31,7 +31,6 @@ namespace PG
             }
 
             CharacterController = GetComponent<CharacterController> ();
-            Input.OnEntrerInCar += TryEnterCar;
 
             //Search or create camera logic.
             if (Camera == null)

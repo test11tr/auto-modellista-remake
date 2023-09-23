@@ -17,9 +17,6 @@ namespace PG
         public float HorizontalChangeSpeed = 10;            //To simulate the use of a keyboard trigger.
         public bool RotateCameraWithMousePressed;
 
-        [Header("GameManager")]
-        public GameManagerT11 _gameManager;
-
         [Header("Key binding settings")]
         public bool UseBindingsFromInputManager = false;
 
@@ -94,14 +91,6 @@ namespace PG
         bool DpadDownDown;
         bool DpadLeftDown;
         bool DpadRightDown;
-
-        private void Awake()
-        {
-            if (_gameManager == null)
-            {
-                _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerT11>();
-            }
-        }
 
         private void Update ()
         {
@@ -432,7 +421,7 @@ namespace PG
 
         public void TryExitFromCar ()
         {
-            if(_gameManager.canExitVehicle)
+            if(GameManagerT11.Instance.canExitVehicle)
             {
                 var playerController = GetComponentInParent<PlayerController>();
                 if (playerController != null)

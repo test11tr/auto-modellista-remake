@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using test11;
 
 namespace PG
 {
@@ -11,8 +12,11 @@ namespace PG
     /// It is partial, it also has two parts Engine, Transmission and Steering (For better code readability).
     /// </summary>
     [RequireComponent (typeof (Rigidbody))]
-    public partial class CarController :VehicleController
+    public partial class CarController :VehicleController, IInteractable
     {
+        [HideInInspector]
+        public string interactionText = "Interact";
+
         [Header("CarController")]
 
         public LayerMask TrailerConnectorMask;
@@ -132,6 +136,45 @@ namespace PG
                 PlayerController.Instance.ExitFromCar ();
             }
         }
+
+        //INTERACT INTERFACE
+
+        public void Interact()
+        {
+            if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.OpenWorld)
+            {
+                GameManagerT11.Instance.TryEnterCar();
+                print("here");
+            }
+        }
+
+        public string GetInteractionText()
+        {
+            if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Garage)
+            {
+                return interactionText = "Select Vehicle";
+            }
+            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleTuner)
+            {
+                return interactionText = "Tuner Menu";
+            }
+            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleDealer)
+            {
+                return interactionText = "Vehicle Details";
+            }
+            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Race)
+            {
+                return interactionText = "Race ";
+            }
+            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.OpenWorld)
+            {
+                return interactionText = "Get In ";
+            }
+
+            return interactionText = "Interact";
+        }
+
+        ///
     }
 
     /// <summary>

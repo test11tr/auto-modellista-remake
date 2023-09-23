@@ -56,10 +56,6 @@ namespace PG
         public float MaxSpeed = 5;
         float CameraVerticlaAngle = 0;
 
-        //Interaction System
-        [Header("InteractionSystem")]
-        public GameObject interactor;
-
         [Header("Automatic")]
         public Camera Camera;
         public Transform CameraParentInCar;
@@ -81,6 +77,34 @@ namespace PG
             else
             {
                 HandlePlayerCharacter();
+            }
+        }
+
+        void Update()
+        {
+            if (isInVehicle)
+            {
+                Interactor.Instance.transform.position = p_spawnedPlayerVehicle.transform.position;
+                Interactor.Instance.CheckForInteraction(6);
+            }
+            else
+            {
+                Interactor.Instance.transform.position = CharacterController.transform.position;
+                Interactor.Instance.CheckForInteraction(-1);
+
+                //Move character
+                Vector3 moveDelta = Input.MoveInput.y * CharacterController.transform.forward;
+                moveDelta += Input.MoveInput.x * CharacterController.transform.right;
+                CharacterController.SimpleMove(moveDelta * MaxSpeed);
+
+                //Rotate character and camera
+                Vector2 viewDelta = Input.ViewInput;
+
+                CharacterController.transform.rotation *= Quaternion.AngleAxis(viewDelta.x, Vector3.up);
+
+                //Rotate the Camera by Vertical axis
+                CameraVerticlaAngle = (CameraVerticlaAngle - viewDelta.y).Clamp(-45, 45);
+                Camera.transform.localRotation = Quaternion.AngleAxis(CameraVerticlaAngle, Vector3.right);
             }
         }
 
@@ -122,7 +146,6 @@ namespace PG
             isInVehicle = false;
             CharacterController.transform.position = PlayerSpawnPoint.position;
             CharacterController.transform.rotation = Quaternion.LookRotation(PlayerSpawnPoint.transform.forward, Vector3.up);
-            Input.OnEntrerInCar += TryEnterCar;
 
             //Search or create camera logic.
             if (Camera == null)
@@ -155,51 +178,7 @@ namespace PG
                 Camera.transform.localPosition = Vector3.zero;
                 Camera.transform.localRotation = Quaternion.identity;
             }
-
             SoundHelper.TryAddAudioListiner(CharacterController.gameObject);
-        }
-
-        private void OnEnable ()
-        {
-            Input.SetActive (true);
-        }
-
-        private void OnDisable ()
-        {
-            Input.SetActive (false);
-            CameraVerticlaAngle = 0;
-            StopAllCoroutines ();
-        }
-
-        void Update ()
-        {
-            if (!gameObject.activeInHierarchy)
-            {
-                return;
-            }
-
-            if(isInVehicle)
-            {
-                interactor.transform.position = p_spawnedPlayerVehicle.transform.position;
-            }
-            else
-            {
-                interactor.transform.position = CharacterController.transform.position;
-
-                //Move character
-                Vector3 moveDelta = Input.MoveInput.y * CharacterController.transform.forward;
-                moveDelta += Input.MoveInput.x * CharacterController.transform.right;
-                CharacterController.SimpleMove(moveDelta * MaxSpeed);
-
-                //Rotate character and camera
-                Vector2 viewDelta = Input.ViewInput;
-
-                CharacterController.transform.rotation *= Quaternion.AngleAxis(viewDelta.x, Vector3.up);
-
-                //Rotate the Camera by Vertical axis
-                CameraVerticlaAngle = (CameraVerticlaAngle - viewDelta.y).Clamp(-45, 45);
-                Camera.transform.localRotation = Quaternion.AngleAxis(CameraVerticlaAngle, Vector3.right);
-            }
         }
 
         public void TryEnterCar ()

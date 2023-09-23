@@ -9,10 +9,8 @@ using test11;
 namespace PG
 {
     [RequireComponent (typeof (Rigidbody))]
-    public class VehicleController :MonoBehaviour, IInteractable
+    public class VehicleController :MonoBehaviour
     {
-        [HideInInspector]
-        public string interactionText = "Interact";
 
         [Header("VehicleController")]
         #pragma warning disable 0649
@@ -200,39 +198,6 @@ namespace PG
                 Debug.LogError ("VehicleDamageController component not found");
             }
         }
-
-        //INTERACT INTERFACE
-
-        public void Interact()
-        {
-            if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Garage)
-            {
-
-            }
-        }
-
-        public string GetInteractionText()
-        {
-            if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Garage)
-            {
-                return interactionText = "Select Vehicle";
-            }else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleTuner){
-                return interactionText = "Tuner Menu";
-            }
-            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleDealer){
-                return interactionText = "Vehicle Details";
-            }
-            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.Race){
-                return interactionText = "Race ";
-            }
-            else if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.OpenWorld){
-                return interactionText = "Get In ";
-            }
-
-            return interactionText = "Interact";
-        }
-
-        ///
 
         protected virtual void OnDrawGizmosSelected ()
         {
