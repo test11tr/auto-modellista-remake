@@ -9,6 +9,7 @@ namespace test11
 {
     public class InteractableZone : MonoBehaviour, IInteractable
     {
+        [HideInInspector]
         public string interactionText = "Interact";
         [Header("Load Scene")]
         [Tooltip("Etkilesime gecilebilecek sahne secenekleri.")]

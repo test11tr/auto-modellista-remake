@@ -11,7 +11,7 @@ namespace PG
     [RequireComponent (typeof (Rigidbody))]
     public class VehicleController :MonoBehaviour, IInteractable
     {
-        [Header("GameManager")]
+        [HideInInspector]
         public string interactionText = "Interact";
 
         [Header("VehicleController")]

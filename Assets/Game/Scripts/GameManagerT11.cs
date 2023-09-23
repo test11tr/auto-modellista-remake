@@ -14,7 +14,7 @@ namespace PG
         //VehicleList
         [Header("Scene Definiton")]
         [Tooltip("Araçlarla olacak etkileşim burada seçilen sahne tipine göre çalışmaktadır. Doğru ayarlanabilmesi önemlidir.")]
-        public SceneTypes sceneType; 
+        public SceneTypes sceneType;
         public enum SceneTypes
         {
             OpenWorld,
@@ -40,7 +40,7 @@ namespace PG
         [Tooltip("Seçenek işaretliyse bölümde araçtan inilemez.")]
         public bool canExitVehicle = false;
         public Transform VehicleSpawnPoint;
-        public bool isInVehicle;
+        [HideInInspector] public bool isInVehicle;
         private int currentCarIndex;
         private GameObject p_spawnedPlayerVehicle;
         public GameObject SpawnedPlayerVehicle => p_spawnedPlayerVehicle;
@@ -55,6 +55,10 @@ namespace PG
         public float CameraSensitivity = 5;
         public float MaxSpeed = 5;
         float CameraVerticlaAngle = 0;
+
+        //Interaction System
+        [Header("InteractionSystem")]
+        public GameObject interactor;
 
         [Header("Automatic")]
         public Camera Camera;
@@ -152,7 +156,7 @@ namespace PG
                 Camera.transform.localRotation = Quaternion.identity;
             }
 
-            SoundHelper.TryAddAudioListiner(gameObject);
+            SoundHelper.TryAddAudioListiner(CharacterController.gameObject);
         }
 
         private void OnEnable ()
@@ -174,19 +178,28 @@ namespace PG
                 return;
             }
 
-            //Move character
-            Vector3 moveDelta = Input.MoveInput.y * CharacterController.transform.forward;
-            moveDelta += Input.MoveInput.x * CharacterController.transform.right;
-            CharacterController.SimpleMove (moveDelta * MaxSpeed);
+            if(isInVehicle)
+            {
+                interactor.transform.position = p_spawnedPlayerVehicle.transform.position;
+            }
+            else
+            {
+                interactor.transform.position = CharacterController.transform.position;
 
-            //Rotate character and camera
-            Vector2 viewDelta = Input.ViewInput;
+                //Move character
+                Vector3 moveDelta = Input.MoveInput.y * CharacterController.transform.forward;
+                moveDelta += Input.MoveInput.x * CharacterController.transform.right;
+                CharacterController.SimpleMove(moveDelta * MaxSpeed);
 
-            CharacterController.transform.rotation *= Quaternion.AngleAxis(viewDelta.x, Vector3.up);
+                //Rotate character and camera
+                Vector2 viewDelta = Input.ViewInput;
 
-            //Rotate the Camera by Vertical axis
-            CameraVerticlaAngle = (CameraVerticlaAngle - viewDelta.y).Clamp (-45, 45);
-            Camera.transform.localRotation = Quaternion.AngleAxis (CameraVerticlaAngle, Vector3.right);
+                CharacterController.transform.rotation *= Quaternion.AngleAxis(viewDelta.x, Vector3.up);
+
+                //Rotate the Camera by Vertical axis
+                CameraVerticlaAngle = (CameraVerticlaAngle - viewDelta.y).Clamp(-45, 45);
+                Camera.transform.localRotation = Quaternion.AngleAxis(CameraVerticlaAngle, Vector3.right);
+            }
         }
 
         public void TryEnterCar ()
@@ -243,6 +256,7 @@ namespace PG
             Input.SetActive(false);
             CameraVerticlaAngle = 0;
             StopAllCoroutines();
+            isInVehicle = true;
 
             PlayerControllerForCar.EnterInCar(p_spawnedPlayerVehicle.GetComponent<CarController>());
             PlayerControllerForCar.OnExitAction += OnExitFromCar;
@@ -267,11 +281,12 @@ namespace PG
 
             offsetPos += Vector3.up * CharacterController.height * 0.5f;
 
-            transform.position = car.transform.position + offsetPos;
-            transform.rotation = Quaternion.LookRotation (car.transform.forward.ZeroHeight (), Vector3.up);
+            CharacterController.gameObject.transform.position = car.transform.position + offsetPos;
+            CharacterController.gameObject.transform.rotation = Quaternion.LookRotation (car.transform.forward.ZeroHeight (), Vector3.up);
             //gameObject.SetActive (true);
             CharacterController.gameObject.SetActive(true);
             Input.SetActive(true);
+            isInVehicle = false;
 
             if (!Camera)
             {

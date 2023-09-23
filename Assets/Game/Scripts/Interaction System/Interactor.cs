@@ -21,24 +21,44 @@ namespace test11
 
         void Update()
         {
-
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-            bool anyInteractable = false;
-
-            foreach (Collider collider in colliderArray)
+            if (GameManagerT11.Instance.isInVehicle)
             {
-                if (collider.TryGetComponent(out IInteractable interactObj))
+                Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange,6);
+                bool anyInteractable = false;
+
+                foreach (Collider collider in colliderArray)
                 {
-                    _interactionText.text = interactObj.GetInteractionText();
-                    anyInteractable = true;
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (collider.TryGetComponent(out IInteractable interactObj))
                     {
-                        interactObj.Interact();
+                        _interactionText.text = interactObj.GetInteractionText();
+                        anyInteractable = true;
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            interactObj.Interact();
+                        }
                     }
                 }
+                handleUI(anyInteractable);
             }
+            else
+            {
+                Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+                bool anyInteractable = false;
 
-            handleUI(anyInteractable);
+                foreach (Collider collider in colliderArray)
+                {
+                    if (collider.TryGetComponent(out IInteractable interactObj))
+                    {
+                        _interactionText.text = interactObj.GetInteractionText();
+                        anyInteractable = true;
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            interactObj.Interact();
+                        }
+                    }
+                }
+                handleUI(anyInteractable);
+            } 
         }
 
         private void handleUI(bool interactable)
