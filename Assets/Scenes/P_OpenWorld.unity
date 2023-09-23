@@ -15434,6 +15434,7 @@ MonoBehaviour:
   interactUIContainer: {fileID: 3553346411728765599}
   interactRange: 2
   _interactionText: {fileID: 3172354073561840541}
+  interactionAvailable: 0
 --- !u!1 &1772685739
 GameObject:
   m_ObjectHideFlags: 0
