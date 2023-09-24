@@ -75,7 +75,7 @@ namespace PG
 
         float TargetHorizontal;
 
-        CarLighting CarLighting;
+        CarLightingT11 CarLighting;
 
         int TouchCount;
         Touch Touch;
@@ -316,7 +316,7 @@ namespace PG
 
             if (Car)
             {
-                CarLighting = Car.GetComponent<CarLighting> ();
+                CarLighting = Car.GetComponent<CarLightingT11> ();
                 var aiControl = Car.GetComponent<ICarControl>();
                 if (aiControl == null || !(aiControl is PositioningAIControl))
                 {
@@ -384,17 +384,17 @@ namespace PG
 
         public void SwitchLeftTurnSignal ()
         {
-            CarLighting.TurnsEnable (TurnsStates.Left);
+            CarLighting.TurnsEnable (TurnsStatesT11.Left);
         }
 
         public void SwitchRightTurnSignal ()
         {
-            CarLighting.TurnsEnable (TurnsStates.Right);
+            CarLighting.TurnsEnable (TurnsStatesT11.Right);
         }
 
         public void SwitchAlarm ()
         {
-            CarLighting.TurnsEnable (TurnsStates.Alarm);
+            CarLighting.TurnsEnable (TurnsStatesT11.Alarm);
         }
 
         public void ConnectTrailer ()

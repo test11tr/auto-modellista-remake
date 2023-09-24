@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace PG
@@ -11,7 +12,7 @@ namespace PG
     public class LightObjectT11 : MonoBehaviour
     {
         public CarLightType CarLightTypeT11;
-        public Light LightGO;
+        public Light[] LightGO;
         public Material OnLightMaterial;                //Material with glow, used for soft and hard switching.
 
         [Header("Soft Switch settings")]
@@ -99,9 +100,13 @@ namespace PG
             var speed = value? OnSwitchSpeed: OffSwitchSpeed;
             float timer = 0;
 
-            if (!value && LightGO)
+            if (!value && LightGO != null)
             {
-                LightGO.SetActive (value);
+                foreach (var lights in LightGO)
+                {
+                    if(lights != null)
+                        lights.SetActive(value);
+                }
             }
 
             if (!forceSwitch)
@@ -115,9 +120,13 @@ namespace PG
                 }
             }
 
-            if (value && LightGO)
+            if (value && LightGO != null)
             {
-                LightGO.SetActive (value);
+                foreach (var lights in LightGO)
+                {
+                    if (lights != null)
+                        lights.SetActive(value);
+                }
             }
 
             MaterialForSoftSwitch.SetColor(ColorPropertyIDtoChange, targetColor);
