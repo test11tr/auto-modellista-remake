@@ -16910,7 +16910,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 056f01b625496cc4aab4fd88717db0dc, type: 2}
   _overrideVehicle: {fileID: 0}
   startWithVehicle: 1
-  startInVehicle: 1
+  startInVehicle: 0
   canExitVehicle: 1
   VehicleSpawnPoint: {fileID: 5924124061592226183}
   isInVehicle: 0

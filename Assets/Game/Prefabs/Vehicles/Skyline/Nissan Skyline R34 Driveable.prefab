@@ -704,10 +704,10 @@ MeshRenderer:
   - {fileID: 2100000, guid: 1351433354d4feb4d9d2708d30b25624, type: 2}
   - {fileID: 2100000, guid: eb7cccbca8e334d4c8ac93117ca745c9, type: 2}
   - {fileID: 2100000, guid: f99b1140db66ac34f8fd9992fcb89c4e, type: 2}
-  - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
+  - {fileID: 2100000, guid: f99b1140db66ac34f8fd9992fcb89c4e, type: 2}
   - {fileID: 2100000, guid: 5a0583b2b6d17fd489e79d7330b70c2a, type: 2}
   - {fileID: 2100000, guid: 947a5bb2c557d714bab89fe2bf887b5a, type: 2}
-  - {fileID: 2100000, guid: 4c2a59ee7b65b7045b5b16db5d9ac428, type: 2}
+  - {fileID: 2100000, guid: 947a5bb2c557d714bab89fe2bf887b5a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -990,6 +990,7 @@ GameObject:
   - component: {fileID: 7566388942488199265}
   - component: {fileID: 7299941384632501255}
   - component: {fileID: 8855248990807311938}
+  - component: {fileID: 6210172702734976390}
   m_Layer: 0
   m_Name: RedLights
   m_TagString: Untagged
@@ -1041,6 +1042,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8cc2fd0f81906f348aaa5f3a5a77083a, type: 2}
+  - {fileID: 2100000, guid: 26d3169379df3f849b8ce5685746b4c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1079,8 +1081,28 @@ MonoBehaviour:
   OnLightMaterial: {fileID: 2100000, guid: 8cc2fd0f81906f348aaa5f3a5a77083a, type: 2}
   OnSwitchSpeed: 10
   OffSwitchSpeed: 2
-  startColor: {r: 0.48235294, g: 0.16862746, b: 0.1764706, a: 1}
-  targetColor: {r: 1, g: 0, b: 0.025000095, a: 1}
+  Intensity: 2
+  emissiveColor: {r: 1, g: 0, b: 0, a: 0}
+  EnableOnStart: 0
+--- !u!114 &6210172702734976390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3707067708587345339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e55459c1962bd43a5aad156976a45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarLightTypeT11: 4
+  LightGO: {fileID: 0}
+  OnLightMaterial: {fileID: 2100000, guid: 26d3169379df3f849b8ce5685746b4c1, type: 2}
+  OnSwitchSpeed: 10
+  OffSwitchSpeed: 2
+  Intensity: 2
+  emissiveColor: {r: 1, g: 1, b: 1, a: 0}
   EnableOnStart: 0
 --- !u!1 &4277669490535721083
 GameObject:

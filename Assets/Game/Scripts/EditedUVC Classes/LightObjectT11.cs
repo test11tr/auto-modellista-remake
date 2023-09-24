@@ -18,6 +18,7 @@ namespace PG
         public float OnSwitchSpeed = 10f;
         public float OffSwitchSpeed = 2f;
         public float Intensity = 2f;
+        public UnityEngine.Color emissiveColor;
 
         [Header("Main settings")]
         public bool EnableOnStart;
@@ -93,7 +94,7 @@ namespace PG
         IEnumerator SoftSwitch (bool value, bool forceSwitch = false)
         {
             //Calculation of the start and target Intensity glow.
-            UnityEngine.Color targetColor = (value ? UnityEngine.Color.red * Intensity : UnityEngine.Color.black);
+            UnityEngine.Color targetColor = (value ? emissiveColor * Intensity : UnityEngine.Color.black);
             UnityEngine.Color startColor = (value ? UnityEngine.Color.black : UnityEngine.Color.black);
             var speed = value? OnSwitchSpeed: OffSwitchSpeed;
             float timer = 0;
