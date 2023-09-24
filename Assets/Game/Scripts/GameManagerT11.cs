@@ -51,11 +51,13 @@ namespace PG
         public Transform PlayerSpawnPoint;
         public Transform CameraParent;
         public CharacterInput Input;
+        public HeadbobSystem headbobSystem;
         public float ChangeCameraSpeed = 5;
         public float CameraSensitivity = 5;
-        public float MaxSpeed = 5;
+        public float WalkSpeed = 5;
+        public float RunSpeed = 8;
         float CameraVerticlaAngle = 0;
-
+       
         [Header("Automatic")]
         public Camera Camera;
         public Transform CameraParentInCar;
@@ -108,7 +110,16 @@ namespace PG
                 //Move character
                 Vector3 moveDelta = Input.MoveInput.y * CharacterController.transform.forward;
                 moveDelta += Input.MoveInput.x * CharacterController.transform.right;
-                CharacterController.SimpleMove(moveDelta * MaxSpeed);
+                if (Input.isRunning)
+                {
+                    headbobSystem.isRunning = true;
+                    CharacterController.SimpleMove(moveDelta * RunSpeed);
+                }
+                else
+                {
+                    headbobSystem.isRunning = false;
+                    CharacterController.SimpleMove(moveDelta * WalkSpeed);
+                }   
 
                 //Rotate character and camera
                 Vector2 viewDelta = Input.ViewInput;
