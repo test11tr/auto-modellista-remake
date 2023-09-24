@@ -33,6 +33,7 @@ namespace PG
 
         [Header("Interaction Text Data")]
         public InteractionText _interactTextData;
+        public Car _CarData;
         string interactionText;
 
         protected override void Awake ()

@@ -485,6 +485,7 @@ MonoBehaviour:
   SteerWheelMaxAngle: 120
   SteerWheel: {fileID: 0}
   _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
+  _CarData: {fileID: 11400000, guid: 056f01b625496cc4aab4fd88717db0dc, type: 2}
 --- !u!114 &6391445652954455793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,7 +750,6 @@ MonoBehaviour:
   - {fileID: 7243089048733912187}
   - {fileID: 2785302792828611451}
   OnLightMaterial: {fileID: 2100000, guid: 1351433354d4feb4d9d2708d30b25624, type: 2}
-  IsSoftSwitch: 0
   OnSwitchSpeed: 10
   OffSwitchSpeed: 2
   Intensity: 2
@@ -1106,7 +1106,6 @@ MonoBehaviour:
   LightGO:
   - {fileID: 0}
   OnLightMaterial: {fileID: 2100000, guid: 8cc2fd0f81906f348aaa5f3a5a77083a, type: 2}
-  IsSoftSwitch: 1
   OnSwitchSpeed: 10
   OffSwitchSpeed: 2
   Intensity: 2
@@ -1128,7 +1127,6 @@ MonoBehaviour:
   LightGO:
   - {fileID: 0}
   OnLightMaterial: {fileID: 2100000, guid: 26d3169379df3f849b8ce5685746b4c1, type: 2}
-  IsSoftSwitch: 1
   OnSwitchSpeed: 10
   OffSwitchSpeed: 2
   Intensity: 2
