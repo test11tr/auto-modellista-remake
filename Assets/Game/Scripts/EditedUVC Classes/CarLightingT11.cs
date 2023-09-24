@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using test11;
 
 namespace PG
 {
     /// <summary>
     /// Car light logic.
     /// </summary>
-    public class CarLighting :MonoBehaviour
+    public class CarLightingT11 :MonoBehaviour
     {
 #pragma warning disable 0649
 
@@ -17,11 +18,11 @@ namespace PG
 
         //All light is searched for in child elements, 
         //depending on the set tag, the light gets into the desired list.
-        public List<LightObject> MainLights = new List<LightObject>();
-        public List<LightObject> LeftTurnLights = new List<LightObject>();
-        public List<LightObject> RightTurnLights = new List<LightObject>();
-        public List<LightObject> BrakeLights = new List<LightObject>();
-        public List<LightObject> ReverseLights = new List<LightObject>();
+        public List<LightObjectT11> MainLights = new List<LightObjectT11>();
+        public List<LightObjectT11> LeftTurnLights = new List<LightObjectT11>();
+        public List<LightObjectT11> RightTurnLights = new List<LightObjectT11>();
+        public List<LightObjectT11> BrakeLights = new List<LightObjectT11>();
+        public List<LightObjectT11> ReverseLights = new List<LightObjectT11>();
 
         CarController _Car;
         //Used property, to be able to connect the trailer to the vehicle.
@@ -50,20 +51,20 @@ namespace PG
         bool InBrake;
         bool MainLightsIsOn;
         Coroutine TurnsCotoutine;
-        public List<LightObject> ActiveTurns = new List<LightObject>();
-        TurnsStates CurrentTurnsState = TurnsStates.Off;
+        public List<LightObjectT11> ActiveTurns = new List<LightObjectT11>();
+        TurnsStatesT11 CurrentTurnsState = TurnsStatesT11.Off;
 
-        public event System.Action<CarLightType, bool> OnSetActiveLight;
+        public event System.Action<CarLightTypeT11, bool> OnSetActiveLight;
 
-        public CarLighting AdditionalLighting { get; set; }
+        public CarLightingT11 AdditionalLighting { get; set; }
 
         void Start ()
         {
             //Searching and distributing all lights.
-            var lights = GetComponentsInChildren<LightObject>();
+            var lights = GetComponentsInChildren<LightObjectT11>();
             foreach (var l in lights)
             {
-                switch (l.CarLightType)
+                switch (l.CarLightTypeT11)
                 {
                     case CarLightType.Main:
                     MainLights.Add (l); break;
@@ -106,7 +107,7 @@ namespace PG
         /// <summary>
         /// Initiates soft switching of the light as needed.
         /// </summary>
-        void InitSoftSwitches (List<LightObject> lights)
+        void InitSoftSwitches (List<LightObjectT11> lights)
         {
             foreach (var light in lights)
             {
@@ -127,7 +128,7 @@ namespace PG
             SetActiveMainLights (false);
             SetActiveBrake (false);
             SetActiveReverse (false);
-            TurnsEnable (TurnsStates.Off);
+            TurnsEnable (TurnsStatesT11.Off);
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace PG
         {
             MainLights.ForEach (l => l.Switch (value));
 
-            OnSetActiveLight.SafeInvoke (CarLightType.Main, value);
+            OnSetActiveLight.SafeInvoke (CarLightTypeT11.Main, value);
 
             if (AdditionalLighting)
             {
@@ -158,7 +159,7 @@ namespace PG
         {
             BrakeLights.ForEach (l => l.Switch (value));
 
-            OnSetActiveLight.SafeInvoke (CarLightType.Brake, value);
+            OnSetActiveLight.SafeInvoke (CarLightTypeT11.Brake, value);
 
             if (AdditionalLighting)
             {
@@ -170,7 +171,7 @@ namespace PG
         {
             ReverseLights.ForEach (l => l.Switch (value));
 
-            OnSetActiveLight.SafeInvoke (CarLightType.Reverse, value);
+            OnSetActiveLight.SafeInvoke (CarLightTypeT11.Reverse, value);
 
             if (AdditionalLighting)
             {
@@ -181,7 +182,7 @@ namespace PG
         /// <summary>
         /// Turns lights switch logic.
         /// </summary>
-        public void TurnsEnable (TurnsStates state)
+        public void TurnsEnable (TurnsStatesT11 state)
         {
             TurnsDisable ();
 
@@ -194,12 +195,12 @@ namespace PG
             {
                 switch (CurrentTurnsState)
                 {
-                    case TurnsStates.Left: OnSetActiveLight.SafeInvoke (CarLightType.TurnLeft, false); break;
-                    case TurnsStates.Right: OnSetActiveLight.SafeInvoke (CarLightType.TurnRight, false); break;
-                    case TurnsStates.Alarm: OnSetActiveLight.SafeInvoke (CarLightType.TurnLeft | CarLightType.TurnRight, false); break;
+                    case TurnsStatesT11.Left: OnSetActiveLight.SafeInvoke (CarLightTypeT11.TurnLeft, false); break;
+                    case TurnsStatesT11.Right: OnSetActiveLight.SafeInvoke (CarLightTypeT11.TurnRight, false); break;
+                    case TurnsStatesT11.Alarm: OnSetActiveLight.SafeInvoke (CarLightTypeT11.TurnLeft | CarLightTypeT11.TurnRight, false); break;
                 }
 
-                CurrentTurnsState = TurnsStates.Off;
+                CurrentTurnsState = TurnsStatesT11.Off;
             }
 
             if (AdditionalLighting)
@@ -223,26 +224,26 @@ namespace PG
         /// <summary>
         /// Turn signals IEnumerator.
         /// </summary>
-        IEnumerator DoTurnsEnable (TurnsStates state)
+        IEnumerator DoTurnsEnable (TurnsStatesT11 state)
         {
-            ActiveTurns = new List<LightObject> ();
+            ActiveTurns = new List<LightObjectT11> ();
 
             switch (state)
             {
-                case TurnsStates.Left:
+                case TurnsStatesT11.Left:
                 ActiveTurns = LeftTurnLights;
-                OnSetActiveLight.SafeInvoke (CarLightType.TurnLeft, true);
+                OnSetActiveLight.SafeInvoke (CarLightTypeT11.TurnLeft, true);
                 break;
 
-                case TurnsStates.Right:
+                case TurnsStatesT11.Right:
                 ActiveTurns = RightTurnLights;
-                OnSetActiveLight.SafeInvoke (CarLightType.TurnRight, true);
+                OnSetActiveLight.SafeInvoke (CarLightTypeT11.TurnRight, true);
                 break;
 
-                case TurnsStates.Alarm:
+                case TurnsStatesT11.Alarm:
                 ActiveTurns.AddRange (LeftTurnLights);
                 ActiveTurns.AddRange (RightTurnLights);
-                OnSetActiveLight.SafeInvoke (CarLightType.TurnLeft | CarLightType.TurnRight, true);
+                OnSetActiveLight.SafeInvoke (CarLightTypeT11.TurnLeft | CarLightTypeT11.TurnRight, true);
                 break;
             }
 
@@ -257,7 +258,7 @@ namespace PG
         }
     }
 
-    public enum TurnsStates
+    public enum TurnsStatesT11
     {
         Off,
         Left,
@@ -265,7 +266,7 @@ namespace PG
         Alarm
     }
 
-    public enum CarLightType
+    public enum CarLightTypeT11
     {
         Main,
         Brake,

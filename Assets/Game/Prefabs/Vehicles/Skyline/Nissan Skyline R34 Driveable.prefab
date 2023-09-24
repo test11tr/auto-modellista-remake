@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 970708856021484225}
   - component: {fileID: 6607634198499231390}
   - component: {fileID: 4594122591029980564}
-  - component: {fileID: 2865081086422832001}
+  - component: {fileID: 6391445652954455793}
   - component: {fileID: 5426817870043850281}
   - component: {fileID: 7847051806706511306}
   m_Layer: 6
@@ -193,7 +193,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1.65}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3685800875527960061}
@@ -485,7 +485,7 @@ MonoBehaviour:
   SteerWheelMaxAngle: 120
   SteerWheel: {fileID: 0}
   _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
---- !u!114 &2865081086422832001
+--- !u!114 &6391445652954455793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,10 +494,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 962977379723067260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad85e0fcfaa4da45b8126b1aef4c6d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 51eb605a3ba7ed14d946c5fadf8d0e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TurnsSwitchHalfRepeatTime: 0.5
+  MainLights: []
+  LeftTurnLights: []
+  RightTurnLights: []
+  BrakeLights: []
+  ReverseLights: []
+  ActiveTurns: []
 --- !u!114 &5426817870043850281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,7 +989,7 @@ GameObject:
   - component: {fileID: 7575666867195529229}
   - component: {fileID: 7566388942488199265}
   - component: {fileID: 7299941384632501255}
-  - component: {fileID: 3557635970093548065}
+  - component: {fileID: 8855248990807311938}
   m_Layer: 0
   m_Name: RedLights
   m_TagString: Untagged
@@ -1056,7 +1062,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3557635970093548065
+--- !u!114 &8855248990807311938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1065,22 +1071,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3707067708587345339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d13305f29ccb144ca493040f770f766, type: 3}
+  m_Script: {fileID: 11500000, guid: 54e55459c1962bd43a5aad156976a45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 5
-  MaxDamage: 3.4028235e+38
-  BrokenGlassMaterial: {fileID: 0}
-  ShardsParticles: {fileID: 0}
-  GlassMaterialIndex: 0
-  SoundShardsType: 1
-  CarLightType: 0
+  CarLightTypeT11: 1
   LightGO: {fileID: 0}
-  OnLightMaterial: {fileID: 2100000, guid: 26d3169379df3f849b8ce5685746b4c1, type: 2}
-  IsSoftSwitch: 1
+  OnLightMaterial: {fileID: 2100000, guid: 8cc2fd0f81906f348aaa5f3a5a77083a, type: 2}
   OnSwitchSpeed: 10
   OffSwitchSpeed: 2
-  Intensity: 2.5
+  startColor: {r: 0.48235294, g: 0.16862746, b: 0.1764706, a: 1}
+  targetColor: {r: 1, g: 0, b: 0.025000095, a: 1}
   EnableOnStart: 0
 --- !u!1 &4277669490535721083
 GameObject:
