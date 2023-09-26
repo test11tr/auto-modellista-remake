@@ -23,6 +23,7 @@ namespace PG
         public List<LightObjectT11> RightTurnLights = new List<LightObjectT11>();
         public List<LightObjectT11> BrakeLights = new List<LightObjectT11>();
         public List<LightObjectT11> ReverseLights = new List<LightObjectT11>();
+        public List<LightObjectT11> DiscHeats = new List<LightObjectT11>();
 
         CarController _Car;
         //Used property, to be able to connect the trailer to the vehicle.
@@ -49,6 +50,7 @@ namespace PG
         }
 
         bool InBrake;
+        bool InBrakeDisc;
         bool MainLightsIsOn;
         Coroutine TurnsCotoutine;
         public List<LightObjectT11> ActiveTurns = new List<LightObjectT11>();
@@ -80,6 +82,9 @@ namespace PG
                     case CarLightType.Reverse:
                     ReverseLights.Add (l);
                     break;
+                    case CarLightType.DiscHeat:
+                    DiscHeats.Add(l);
+                    break;
 
                 }
             }
@@ -92,6 +97,7 @@ namespace PG
             InitSoftSwitches (BrakeLights);
             InitSoftSwitches (LeftTurnLights);
             InitSoftSwitches (RightTurnLights);
+            InitSoftSwitches(DiscHeats);
         }
 
         private void Update ()
@@ -101,6 +107,13 @@ namespace PG
             {
                 InBrake = carInBrake;
                 SetActiveBrake (InBrake);
+            }
+
+            bool carInBrakeDiscHeat = Car != null && Car.CurrentBrake > 0.75f;
+            if (InBrakeDisc != carInBrakeDiscHeat)
+            {
+                InBrakeDisc = carInBrakeDiscHeat;
+                SetActiveDiscHeat(InBrakeDisc);
             }
         }
 
@@ -127,6 +140,7 @@ namespace PG
         {
             SetActiveMainLights (false);
             SetActiveBrake (false);
+            SetActiveDiscHeat(false);
             SetActiveReverse (false);
             TurnsEnable (TurnsStatesT11.Off);
         }
@@ -164,6 +178,18 @@ namespace PG
             if (AdditionalLighting)
             {
                 AdditionalLighting.SetActiveBrake (value);
+            }
+        }
+
+        public void SetActiveDiscHeat(bool value)
+        {
+            DiscHeats.ForEach(l => l.Switch(value));
+
+            OnSetActiveLight.SafeInvoke(CarLightTypeT11.DiscHeat, value);
+
+            if (AdditionalLighting)
+            {
+                AdditionalLighting.SetActiveDiscHeat(value);
             }
         }
 
@@ -273,5 +299,6 @@ namespace PG
         TurnLeft,
         TurnRight,
         Reverse,
+        DiscHeat
     }
 }

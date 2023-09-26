@@ -272,5 +272,6 @@ namespace PG
         TurnLeft,
         TurnRight,
         Reverse,
+        DiscHeat
     }
 }
