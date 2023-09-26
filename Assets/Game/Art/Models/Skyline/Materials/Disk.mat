@@ -272,7 +272,7 @@ Material:
     - _BaseColorVisible: 1
     - _BaseColor_Step: 0.59
     - _BaseShade_Feather: 0.0001
-    - _Base_Speed: 0
+    - _Base_Speed: 1
     - _Blend: 0
     - _BlendMode: 0
     - _BlendModePreserveSpecular: 1
@@ -287,7 +287,7 @@ Material:
     - _ClippingMode: 0
     - _Clipping_Level: 0
     - _CoatMask: 0
-    - _ColorShift_Speed: 0
+    - _ColorShift_Speed: 1
     - _ComposerMaskMode: 0
     - _Cull: 2
     - _CullMode: 2
@@ -512,22 +512,22 @@ Material:
     - _utsVersionY: 9
     - _utsVersionZ: 4
     m_Colors:
-    - _1st_ShadeColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+    - _1st_ShadeColor: {r: 0.36792448, g: 0.36792448, b: 0.36792448, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+    - _BaseColor: {r: 0.4150943, g: 0.4150943, b: 0.4150943, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.4150943, g: 0.4150943, b: 0.4150943, a: 1}
-    - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.41509426, g: 0.41509426, b: 0.41509426, a: 1}
+    - _ColorShift: {r: 0.77254903, g: 0.047275867, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
-    - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Emissive_Color: {r: 0.6237838, g: 0.08317118, b: 0, a: 1.5700094}
     - _FirstShadeMaskColor: {r: 0, g: 1, b: 1, a: 1}
     - _HighColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     - _HighlightMaskColor: {r: 1, g: 1, b: 0, a: 1}

@@ -96,7 +96,7 @@ namespace PG
         {
             //Calculation of the start and target Intensity glow.
             UnityEngine.Color targetColor = (value ? emissiveColor * Intensity : UnityEngine.Color.black);
-            UnityEngine.Color startColor = (value ? UnityEngine.Color.black : UnityEngine.Color.black);
+            UnityEngine.Color startColor = (value ? UnityEngine.Color.black : emissiveColor * Intensity);
             var speed = value? OnSwitchSpeed: OffSwitchSpeed;
             float timer = 0;
 

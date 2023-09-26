@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 858752930402629200}
   - component: {fileID: 1426347360169897709}
   - component: {fileID: 3292673356242339048}
+  - component: {fileID: 2343766694133157798}
   m_Layer: 0
   m_Name: Rear Wheel Left
   m_TagString: Untagged
@@ -819,7 +820,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -841,6 +842,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2343766694133157798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517720652855112853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e55459c1962bd43a5aad156976a45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarLightTypeT11: 1
+  LightGO: []
+  OnLightMaterial: {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
+  OnSwitchSpeed: 5
+  OffSwitchSpeed: 0.25
+  Intensity: 2
+  emissiveColor: {r: 0.5471698, g: 0.07295598, b: 0, a: 1}
+  EnableOnStart: 0
 --- !u!1 &1910198350452908210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1128,7 @@ MonoBehaviour:
   - {fileID: 0}
   OnLightMaterial: {fileID: 2100000, guid: 8cc2fd0f81906f348aaa5f3a5a77083a, type: 2}
   OnSwitchSpeed: 10
-  OffSwitchSpeed: 2
+  OffSwitchSpeed: 10
   Intensity: 2
   emissiveColor: {r: 1, g: 0, b: 0, a: 0}
   EnableOnStart: 0
@@ -1143,6 +1164,7 @@ GameObject:
   - component: {fileID: 6986795877343571844}
   - component: {fileID: 7069363794247576418}
   - component: {fileID: 2317805759117577600}
+  - component: {fileID: 222487294704362622}
   m_Layer: 0
   m_Name: Front Right Wheel
   m_TagString: Untagged
@@ -1196,7 +1218,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1218,6 +1240,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &222487294704362622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4277669490535721083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e55459c1962bd43a5aad156976a45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarLightTypeT11: 1
+  LightGO: []
+  OnLightMaterial: {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
+  OnSwitchSpeed: 5
+  OffSwitchSpeed: 0.25
+  Intensity: 2
+  emissiveColor: {r: 0.5471698, g: 0.07295598, b: 0, a: 1}
+  EnableOnStart: 0
 --- !u!1 &5091059346759160979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1303,7 @@ GameObject:
   - component: {fileID: 7898287266521745317}
   - component: {fileID: 3159932102666243098}
   - component: {fileID: 5946496383649394478}
+  - component: {fileID: 721901153355948704}
   m_Layer: 0
   m_Name: Front Left Wheel
   m_TagString: Untagged
@@ -1315,7 +1358,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
   - {fileID: 2100000, guid: eb7cccbca8e334d4c8ac93117ca745c9, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1337,6 +1380,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &721901153355948704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493276525180147206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e55459c1962bd43a5aad156976a45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarLightTypeT11: 1
+  LightGO: []
+  OnLightMaterial: {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
+  OnSwitchSpeed: 5
+  OffSwitchSpeed: 0.25
+  Intensity: 2
+  emissiveColor: {r: 0.5471698, g: 0.07295598, b: 0, a: 1}
+  EnableOnStart: 0
 --- !u!1 &6405589440241576509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1540,7 @@ GameObject:
   - component: {fileID: 1049207717254322651}
   - component: {fileID: 6473099671262619742}
   - component: {fileID: 1726520519727350375}
+  - component: {fileID: 5626179673138157783}
   m_Layer: 0
   m_Name: Rear Wheel Right
   m_TagString: Untagged
@@ -1530,7 +1594,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1552,6 +1616,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5626179673138157783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8241913568036392427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e55459c1962bd43a5aad156976a45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarLightTypeT11: 1
+  LightGO: []
+  OnLightMaterial: {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
+  OnSwitchSpeed: 5
+  OffSwitchSpeed: 0.25
+  Intensity: 2
+  emissiveColor: {r: 0.5471698, g: 0.07295598, b: 0, a: 1}
+  EnableOnStart: 0
 --- !u!1 &8920387346798577767
 GameObject:
   m_ObjectHideFlags: 0
