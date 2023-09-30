@@ -16044,6 +16044,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1014746657424013936, guid: 8fb181d211a56b944ad9d83fe7e171a0, type: 3}
+      propertyPath: _playerCars.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 056f01b625496cc4aab4fd88717db0dc, type: 2}
     - target: {fileID: 1458152134959387697, guid: 8fb181d211a56b944ad9d83fe7e171a0, type: 3}
       propertyPath: m_Name
       value: GameManager

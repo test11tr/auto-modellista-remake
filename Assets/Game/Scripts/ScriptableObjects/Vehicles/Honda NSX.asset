@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
+  m_Name: Honda NSX
+  m_EditorClassIdentifier: 
+  carIndex: Car1
+  carNumberIndex: 1
+  carName: Honda NSX
+  carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
+    of a Japanese legend under its hood, this vehicle is a horsepower beast.
+  carPrice: 0
+  carSpeed: 6
+  carAcceleration: 7
+  carHandling: 5
+  carVisualPrefab: {fileID: 5196333457677523792, guid: 08ea983f7e9277042a70388de19df522, type: 3}
+  carPlayablePrefab: {fileID: 8995877335912086486, guid: 055c4fd5119649343a09df039e7d18ef, type: 3}
