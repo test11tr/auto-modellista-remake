@@ -75,7 +75,7 @@ WheelCollider:
   m_GameObject: {fileID: 482836645922423663}
   serializedVersion: 2
   m_Center: {x: 0, y: 0.075, z: 0}
-  m_Radius: 0.12
+  m_Radius: 0.13
   m_SuspensionSpring:
     spring: 28000
     damper: 3200
@@ -1362,7 +1362,7 @@ WheelCollider:
   m_GameObject: {fileID: 6428513537324642746}
   serializedVersion: 2
   m_Center: {x: 0, y: 0.075, z: 0}
-  m_Radius: 0.12
+  m_Radius: 0.13
   m_SuspensionSpring:
     spring: 28000
     damper: 3200
@@ -1549,8 +1549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CarLightTypeT11: 0
   LightGO:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3296066357036088568}
+  - {fileID: 6271453321238496412}
   OnLightMaterial: {fileID: 2100000, guid: ed5978a84b677ba469b1fc816fb33fac, type: 2}
   OnSwitchSpeed: 10
   OffSwitchSpeed: 2
@@ -1721,6 +1721,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1710cf83e188d334da00d02d7cdd989e, type: 3}
+--- !u!108 &6271453321238496412 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5914751959529994009, guid: 1710cf83e188d334da00d02d7cdd989e, type: 3}
+  m_PrefabInstance: {fileID: 368668450627384197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7291368153314293641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6930444668197733388, guid: 1710cf83e188d334da00d02d7cdd989e, type: 3}
@@ -2010,5 +2015,10 @@ PrefabInstance:
 --- !u!4 &2271348882434281453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6930444668197733388, guid: 1710cf83e188d334da00d02d7cdd989e, type: 3}
+  m_PrefabInstance: {fileID: 9198762160486140897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &3296066357036088568 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5914751959529994009, guid: 1710cf83e188d334da00d02d7cdd989e, type: 3}
   m_PrefabInstance: {fileID: 9198762160486140897}
   m_PrefabAsset: {fileID: 0}
