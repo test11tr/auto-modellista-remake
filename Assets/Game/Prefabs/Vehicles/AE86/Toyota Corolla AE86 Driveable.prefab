@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7897591075459790522}
   - component: {fileID: 1037029355283739751}
   - component: {fileID: 7306076341084059913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Toyota Corolla AE86 Driveable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
