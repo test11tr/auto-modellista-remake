@@ -149,7 +149,7 @@ namespace PG
             }
             else if(GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleDealer)
             {
-                DealerInspectVehicle();
+                MenuManagerT11.Instance.ManageVehiclePage(_CarData);
                 GameManagerT11.Instance.HandleInputMute(true);
                 Interactor.Instance.isInteractCheckable = false;
             }
@@ -180,23 +180,6 @@ namespace PG
 
             return interactionText = _interactTextData.defaultText;
         }
-
-        public void DealerInspectVehicle()
-        {
-            MenuManagerT11.Instance.DealerVehicleInspectMenu.SetActive(true);
-            MenuManagerT11.Instance.vehicleName.text = _CarData.carName;
-            MenuManagerT11.Instance.vehicleDescription.text = _CarData.carDescription;
-            MenuManagerT11.Instance.vehicleClass.sprite = _CarData.vehicleClass;
-            MenuManagerT11.Instance.vehicleBrand.sprite = _CarData.vehicleBrand;
-            MenuManagerT11.Instance.carAcceleration.fillAmount = _CarData.carAcceleration / 10;
-            MenuManagerT11.Instance.carSpeed.fillAmount = _CarData.carSpeed / 10;
-            MenuManagerT11.Instance.carHandling.fillAmount = _CarData.carHandling / 10;
-            MenuManagerT11.Instance.carBreaking.fillAmount = _CarData.carBreaking / 10;
-            MenuManagerT11.Instance.carMaxSpeed.text = _CarData.carMaxSpeed.ToString();
-            MenuManagerT11.Instance.car0100Time.text = _CarData.car0100Time.ToString();
-            MenuManagerT11.Instance.carHorsePower.text = _CarData.carHorsePower.ToString();
-        }
-        ///
     }
 
     /// <summary>
