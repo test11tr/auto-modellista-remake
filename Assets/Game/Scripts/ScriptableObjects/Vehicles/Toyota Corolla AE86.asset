@@ -15,11 +15,17 @@ MonoBehaviour:
   carIndex: Car3
   carNumberIndex: 3
   carName: Toyota Corolla AE86 Trueno
-  carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
-    of a Japanese legend under its hood, this vehicle is a horsepower beast.
-  carPrice: 0
-  carSpeed: 6
-  carAcceleration: 7
+  carDescription: Embark on a journey with the soul of Japan, where precision meets
+    passion in the iconic AE86!
+  vehicleClass: {fileID: 21300000, guid: cc073ea686d1f6e4390db6dd633b87e8, type: 3}
+  vehicleBrand: {fileID: 21300000, guid: 730076bc4469fbf49b4cdfa40d678b96, type: 3}
+  carPrice: 35000
+  carAcceleration: 2
+  carSpeed: 3
   carHandling: 5
+  carBreaking: 2
+  carMaxSpeed: 150
+  car0100Time: 6.4
+  carHorsePower: 140
   carVisualPrefab: {fileID: 3031622846038301546, guid: 571376087e4b3ff449e1d2dde324926c, type: 3}
   carPlayablePrefab: {fileID: 549453197428740520, guid: d0f9074725d06ce4486851e9f3f78c1d, type: 3}

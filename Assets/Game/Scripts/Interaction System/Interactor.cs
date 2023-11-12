@@ -19,35 +19,38 @@ namespace test11
         public float interactRange;
         public TMP_Text _interactionText;
         [HideInInspector] public bool interactionAvailable;
+        [HideInInspector] public bool isInteractCheckable = true;
 
         public void CheckForInteraction(int playerState)
         {
-            int layerMask = 1 << playerState;
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange, ~layerMask);
-            bool anyInteractable = false;
+            print(isInteractCheckable);
+            if (isInteractCheckable) {
+                int layerMask = 1 << playerState;
+                Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange, ~layerMask);
+                bool anyInteractable = false;
 
-            foreach (Collider collider in colliderArray)
-            {
-                if (collider.TryGetComponent(out IInteractable interactObj))
+                foreach (Collider collider in colliderArray)
                 {
-                    interactionAvailable = true;
-                    _interactionText.text = interactObj.GetInteractionText();
-                    anyInteractable = true;
-                    if (Input.GetKeyDown(KeyCode.F))
+                    if (collider.TryGetComponent(out IInteractable interactObj))
                     {
-                        interactObj.Interact();
+                        interactionAvailable = true;
+                        _interactionText.text = interactObj.GetInteractionText();
+                        anyInteractable = true;
+                        if (Input.GetKeyDown(KeyCode.F))
+                        {
+                            interactObj.Interact();
+                            anyInteractable = false;
+                        }
                     }
                 }
-                else
-                {
-                    interactionAvailable = false;
-                }
+                handleUI(anyInteractable);
             }
-            handleUI(anyInteractable);
+            
         }
 
-        private void handleUI(bool interactable)
+        public void handleUI(bool interactable)
         {
+            print("ui: " + interactable);
             if (interactable)
             {
                 interactUIContainer.SetActive(true);
@@ -56,6 +59,11 @@ namespace test11
             {
                 interactUIContainer.SetActive(false);
             }
+        }
+
+        public void HandleInteractCheckable(bool boolean)
+        {
+            isInteractCheckable = boolean;
         }
     }
 }

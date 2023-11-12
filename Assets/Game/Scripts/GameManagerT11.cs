@@ -103,6 +103,11 @@ namespace PG
             }*/
         }
 
+        public void HandleInputMute(bool boolean)
+        {
+            inputMute = boolean;
+        }
+
         void HandleInteractorInVehicle()
         {
             Interactor.Instance.transform.position = p_spawnedPlayerVehicle.transform.position;

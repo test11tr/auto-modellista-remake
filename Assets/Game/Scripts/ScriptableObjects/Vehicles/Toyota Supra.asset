@@ -15,11 +15,16 @@ MonoBehaviour:
   carIndex: Car2
   carNumberIndex: 2
   carName: Toyota Supra MK4
-  carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
-    of a Japanese legend under its hood, this vehicle is a horsepower beast.
-  carPrice: 0
+  carDescription: Where Japanese precision meets driving passion!
+  vehicleClass: {fileID: 21300000, guid: 2ce1923e7ee26cd49bb9820dd6636a0a, type: 3}
+  vehicleBrand: {fileID: 21300000, guid: 730076bc4469fbf49b4cdfa40d678b96, type: 3}
+  carPrice: 90000
+  carAcceleration: 4
   carSpeed: 6
-  carAcceleration: 7
   carHandling: 5
+  carBreaking: 5
+  carMaxSpeed: 210
+  car0100Time: 5.2
+  carHorsePower: 230
   carVisualPrefab: {fileID: 864053224807546838, guid: 98cbfbe835ff0c444994c5346fe781f8, type: 3}
   carPlayablePrefab: {fileID: 4625381787566955339, guid: 82b908f2dbf14b94ea7589072feaed5e, type: 3}

@@ -15,11 +15,17 @@ MonoBehaviour:
   carIndex: Car1
   carNumberIndex: 1
   carName: Honda NSX
-  carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
-    of a Japanese legend under its hood, this vehicle is a horsepower beast.
-  carPrice: 0
-  carSpeed: 6
-  carAcceleration: 7
-  carHandling: 5
+  carDescription: "Precision redefined, NSX \u2013 where artistry meets engineering
+    for the ultimate driving experience."
+  vehicleClass: {fileID: 21300000, guid: ae1f9069cf4df6043838c0e62f6e7b40, type: 3}
+  vehicleBrand: {fileID: 21300000, guid: dda3f486409f202478702e5e8a6ef4fc, type: 3}
+  carPrice: 65000
+  carAcceleration: 3
+  carSpeed: 5
+  carHandling: 3
+  carBreaking: 4
+  carMaxSpeed: 185
+  car0100Time: 5.9
+  carHorsePower: 190
   carVisualPrefab: {fileID: 5196333457677523792, guid: 08ea983f7e9277042a70388de19df522, type: 3}
   carPlayablePrefab: {fileID: 8995877335912086486, guid: 055c4fd5119649343a09df039e7d18ef, type: 3}

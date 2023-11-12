@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace test11
 {
@@ -12,14 +13,20 @@ namespace test11
        public int carNumberIndex;
        public string carName;
        public string carDescription;
+       public Sprite vehicleClass;
+       public Sprite vehicleBrand;
 
-       [Header("Car Stats")]
+        [Header("Car Stats")]
        public int carPrice;
-       public float carSpeed;
        public float carAcceleration;
+       public float carSpeed;
        public float carHandling;
+       public float carBreaking;
+       public float carMaxSpeed;
+       public float car0100Time;
+       public float carHorsePower;
 
-       [Header("Car References")]
+        [Header("Car References")]
        public GameObject carVisualPrefab;
        public GameObject carPlayablePrefab;
     }

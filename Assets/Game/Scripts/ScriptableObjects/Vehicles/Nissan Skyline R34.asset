@@ -15,11 +15,16 @@ MonoBehaviour:
   carIndex: Car0
   carNumberIndex: 0
   carName: Nissan Skyline R34
-  carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
-    of a Japanese legend under its hood, this vehicle is a horsepower beast.
-  carPrice: 0
-  carSpeed: 6
-  carAcceleration: 7
-  carHandling: 5
+  carDescription: Elevate your drive with the timeless power and style of the R34
+  vehicleClass: {fileID: 21300000, guid: 2ce1923e7ee26cd49bb9820dd6636a0a, type: 3}
+  vehicleBrand: {fileID: 21300000, guid: c69bd23235f3dc34ebbe9709e8179463, type: 3}
+  carPrice: 50000
+  carAcceleration: 3
+  carSpeed: 3
+  carHandling: 2
+  carBreaking: 3
+  carMaxSpeed: 190
+  car0100Time: 5.4
+  carHorsePower: 210
   carVisualPrefab: {fileID: 9063715114740488226, guid: 767473c7299968f48bb810a0357ad6be, type: 3}
   carPlayablePrefab: {fileID: 962977379723067260, guid: 62606eb83d5df1f458781e8e28fd377b, type: 3}
