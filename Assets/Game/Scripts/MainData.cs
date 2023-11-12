@@ -8,6 +8,8 @@ namespace test11
 {
     public class MainData : MonoBehaviour
     {
+        [SerializeField] private int startingMoney;
+
         private void Awake()
         {
             // 1 => true, 0 => false
@@ -15,7 +17,7 @@ namespace test11
             if (PlayerPrefs.GetInt("FirstRun", 0) != 1)
             {
                 PlayerPrefs.SetInt("FirstRun", 1);
-                //PlayerPrefs.SetInt("Currency", startingCR);
+                PlayerPrefs.SetInt("Money", startingMoney);
                 //unlockableWorlds
                 PlayerPrefs.SetInt("World0", 1);
                 PlayerPrefs.SetInt("CurrentWorld", 0);

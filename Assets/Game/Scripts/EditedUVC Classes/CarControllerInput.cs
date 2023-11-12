@@ -163,132 +163,136 @@ namespace PG
 
         void UpdateKeys ()
         {
-            if (GameController.Instance)
+            if(!GameManagerT11.Instance.inputMute)
             {
-                if (Input.GetKeyDown (KeyCode.F3))
+                if (GameController.Instance)
                 {
-                    GameController.Instance.RestartScene ();
+                    if (Input.GetKeyDown(KeyCode.F3))
+                    {
+                        GameController.Instance.RestartScene();
+                    }
+
+                    if (!GameController.SplitScreen && Input.GetKeyDown(KeyCode.N))
+                    {
+                        GameController.Instance.SetNextCar();
+                    }
                 }
 
-                if (!GameController.SplitScreen && Input.GetKeyDown (KeyCode.N))
+                if (Input.touchCount == 0 && !Input.GetMouseButton(0))
                 {
-                    GameController.Instance.SetNextCar ();
+                    if (UseBindingsFromInputManager)
+                    {
+                        UpdateDpad();
+
+                        SetSteer(Input.GetAxis(SteerAxis));
+                        SetAcceleration(Input.GetAxis(AccelerationAxis));
+                        SetBrakeReverse(Input.GetAxis(BrakeReverseAxis));
+                        SetBoost(Input.GetButton(BoostButton));
+                        SetHandBrake(Input.GetButton(HandBrakeButton));
+                        SetPitch(Input.GetAxis(PitchAxis));
+
+                        if (Input.GetButtonDown(NextGearButton))
+                        {
+                            NextGear();
+                        }
+                        if (Input.GetButtonDown(PrevGearButton))
+                        {
+                            PrevGear();
+                        }
+                        if (Input.GetButtonDown(SwitchLightsButton))
+                        {
+                            SwitchLights();
+                        }
+                        if (Input.GetButtonDown(SwitchLeftTurnLightsButton) || DpadLeftDown)
+                        {
+                            SwitchLeftTurnSignal();
+                        }
+                        if (Input.GetButtonDown(SwitchRightTurnLightsButton) || DpadRightDown)
+                        {
+                            SwitchRightTurnSignal();
+                        }
+                        if (Input.GetButtonDown(SwitchAlarmButton) || DpadDownDown)
+                        {
+                            SwitchAlarm();
+                        }
+                        if (Input.GetButtonDown(ConnectTrailerButton) || DpadUpDown)
+                        {
+                            ConnectTrailer();
+                        }
+                        if (Input.GetButtonDown(ResetCarButton))
+                        {
+                            ResetCar();
+                        }
+                        if (Input.GetKeyDown(RestoreCarButton))
+                        {
+                            RestoreCar();
+                        }
+                        if (Input.GetButtonDown(ChangeViewButton))
+                        {
+                            ChangeView();
+                        }
+                        if (Input.GetButtonDown(EnterExitButton))
+                        {
+                            TryExitFromCar();
+                        }
+                    }
+                    else
+                    {
+                        SetSteer(Input.GetAxis(HorizontalAxis));
+                        SetAcceleration(Input.GetAxis(VerticalAxis).Clamp(0, 1));
+                        SetBrakeReverse(-Input.GetAxis(VerticalAxis).Clamp(-1, 0));
+                        SetBoost(Input.GetKey(BoostKey));
+                        SetHandBrake(Input.GetKey(HandBrakeKey));
+                        SetPitch(Input.GetKey(PichUpKey) ? 1 : Input.GetKey(PichDownKey) ? -1 : 0);
+
+                        if (Input.GetKeyDown(NextGearKey))
+                        {
+                            NextGear();
+                        }
+                        if (Input.GetKeyDown(PrevGearKey))
+                        {
+                            PrevGear();
+                        }
+                        if (Input.GetKeyDown(SwitchLightsKey))
+                        {
+                            SwitchLights();
+                        }
+                        if (Input.GetKeyDown(SwitchLeftTurnLightsKey))
+                        {
+                            SwitchLeftTurnSignal();
+                        }
+                        if (Input.GetKeyDown(SwitchRightTurnLightsKey))
+                        {
+                            SwitchRightTurnSignal();
+                        }
+                        if (Input.GetKeyDown(SwitchAlarmKey))
+                        {
+                            SwitchAlarm();
+                        }
+                        if (Input.GetKeyDown(ConnectTrailerKey))
+                        {
+                            ConnectTrailer();
+                        }
+                        if (Input.GetKeyDown(ResetCarKey))
+                        {
+                            ResetCar();
+                        }
+                        if (Input.GetKeyDown(RestoreCarKey))
+                        {
+                            RestoreCar();
+                        }
+                        if (Input.GetKeyDown(ChangeViewKey))
+                        {
+                            ChangeView();
+                        }
+                        if (Input.GetKeyDown(EnterExitKey))
+                        {
+                            TryExitFromCar();
+                        }
+                    }
                 }
             }
-
-            if (Input.touchCount == 0 && !Input.GetMouseButton (0))
-            {
-                if (UseBindingsFromInputManager)
-                {
-                    UpdateDpad ();
-
-                    SetSteer (Input.GetAxis (SteerAxis));
-                    SetAcceleration (Input.GetAxis (AccelerationAxis));
-                    SetBrakeReverse (Input.GetAxis (BrakeReverseAxis));
-                    SetBoost (Input.GetButton (BoostButton));
-                    SetHandBrake (Input.GetButton (HandBrakeButton));
-                    SetPitch (Input.GetAxis (PitchAxis));
-
-                    if (Input.GetButtonDown (NextGearButton))
-                    {
-                        NextGear ();
-                    }
-                    if (Input.GetButtonDown (PrevGearButton))
-                    {
-                        PrevGear ();
-                    }
-                    if (Input.GetButtonDown (SwitchLightsButton))
-                    {
-                        SwitchLights ();
-                    }
-                    if (Input.GetButtonDown (SwitchLeftTurnLightsButton) || DpadLeftDown)
-                    {
-                        SwitchLeftTurnSignal ();
-                    }
-                    if (Input.GetButtonDown (SwitchRightTurnLightsButton) || DpadRightDown)
-                    {
-                        SwitchRightTurnSignal ();
-                    }
-                    if (Input.GetButtonDown (SwitchAlarmButton) || DpadDownDown)
-                    {
-                        SwitchAlarm ();
-                    }
-                    if (Input.GetButtonDown (ConnectTrailerButton) || DpadUpDown)
-                    {
-                        ConnectTrailer ();
-                    }
-                    if (Input.GetButtonDown (ResetCarButton))
-                    {
-                        ResetCar ();
-                    }
-                    if (Input.GetKeyDown (RestoreCarButton))
-                    {
-                        RestoreCar ();
-                    }
-                    if (Input.GetButtonDown (ChangeViewButton))
-                    {
-                        ChangeView ();
-                    }
-                    if (Input.GetButtonDown (EnterExitButton))
-                    {
-                        TryExitFromCar ();
-                    }
-                }
-                else
-                {
-                    SetSteer (Input.GetAxis (HorizontalAxis));
-                    SetAcceleration (Input.GetAxis (VerticalAxis).Clamp(0, 1));
-                    SetBrakeReverse (-Input.GetAxis (VerticalAxis).Clamp (-1, 0));
-                    SetBoost (Input.GetKey (BoostKey));
-                    SetHandBrake (Input.GetKey (HandBrakeKey));
-                    SetPitch (Input.GetKey (PichUpKey)? 1: Input.GetKey (PichDownKey)? -1: 0);
-
-                    if (Input.GetKeyDown (NextGearKey))
-                    {
-                        NextGear ();
-                    }
-                    if (Input.GetKeyDown (PrevGearKey))
-                    {
-                        PrevGear ();
-                    }
-                    if (Input.GetKeyDown (SwitchLightsKey))
-                    {
-                        SwitchLights ();
-                    }
-                    if (Input.GetKeyDown (SwitchLeftTurnLightsKey))
-                    {
-                        SwitchLeftTurnSignal ();
-                    }
-                    if (Input.GetKeyDown (SwitchRightTurnLightsKey))
-                    {
-                        SwitchRightTurnSignal ();
-                    }
-                    if (Input.GetKeyDown (SwitchAlarmKey))
-                    {
-                        SwitchAlarm ();
-                    }
-                    if (Input.GetKeyDown (ConnectTrailerKey))
-                    {
-                        ConnectTrailer ();
-                    }
-                    if (Input.GetKeyDown (ResetCarKey))
-                    {
-                        ResetCar ();
-                    }
-                    if (Input.GetKeyDown (RestoreCarKey))
-                    {
-                        RestoreCar ();
-                    }
-                    if (Input.GetKeyDown (ChangeViewKey))
-                    {
-                        ChangeView ();
-                    }
-                    if (Input.GetKeyDown (EnterExitKey))
-                    {
-                        TryExitFromCar ();
-                    }
-                }
-            }
+            
         }
 
         void UpdateDpad ()

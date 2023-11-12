@@ -19,7 +19,8 @@ namespace test11
             GarageTrigger,
             CarDealerTrigger,
             CarTunerTrigger,
-            OpenWorldTrigger
+            OpenWorldTrigger,
+            MoneyAdder,
         }
 
         [Header("Interaction Datas")]
@@ -46,6 +47,10 @@ namespace test11
             else if (sceneType == SceneTypes.CarTunerTrigger)
             {
                 interact3DText.text = _interactTextData.CarTunerTrigger3DText;
+            }
+            else if (sceneType == SceneTypes.MoneyAdder)
+            {
+                interact3DText.text = "Add Money";
             }
             else
             {
@@ -77,6 +82,10 @@ namespace test11
             {
                 SceneManager.LoadScene(_interactSceneData.OpenWorld);
             }
+            else if (sceneType == SceneTypes.MoneyAdder)
+            {
+                PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") + 10000);
+            }
         }
 
         public string GetInteractionText()
@@ -100,6 +109,10 @@ namespace test11
             else if (sceneType == SceneTypes.OpenWorldTrigger)
             {
                 return interactionText = _interactTextData.OpenWorldTrigger;
+            }
+            else if (sceneType == SceneTypes.MoneyAdder)
+            {
+                return interactionText = "Add 10.000$";
             }
 
             return interactionText = _interactTextData.defaultText;

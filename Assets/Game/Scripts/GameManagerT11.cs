@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 using static UnityEditor.PlayerSettings;
 using test11;
@@ -57,7 +58,8 @@ namespace PG
         public float WalkSpeed = 5;
         public float RunSpeed = 8;
         float CameraVerticlaAngle = 0;
-       
+        public bool inputMute;
+
         [Header("Automatic")]
         public Camera Camera;
         public Transform CameraParentInCar;
@@ -92,6 +94,13 @@ namespace PG
             {
                 HandleInteractorAndPlayerControls();
             }
+            
+            /// FOR DEBUG PURPOSES
+            /*if (UnityEngine.Input.GetKeyDown(KeyCode.M))
+            {
+                inputMute = !inputMute;
+                print(inputMute);
+            }*/
         }
 
         void HandleInteractorInVehicle()
@@ -105,7 +114,7 @@ namespace PG
             Interactor.Instance.transform.position = CharacterController.transform.position;
             Interactor.Instance.CheckForInteraction(-1);
 
-            if (CharacterController.gameObject.activeSelf)
+            if (CharacterController.gameObject.activeSelf && !inputMute)
             {
                 //Move character
                 Vector3 moveDelta = Input.MoveInput.y * CharacterController.transform.forward;
