@@ -149,7 +149,7 @@ namespace PG
             }
             else if(GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleDealer)
             {
-                MenuManagerT11.Instance.ManageVehiclePage(_CarData);
+                MenuManagerT11.Instance.ManageVehicleInspectorPage(_CarData);
                 GameManagerT11.Instance.HandleInputMute(true);
                 Interactor.Instance.isInteractCheckable = false;
             }

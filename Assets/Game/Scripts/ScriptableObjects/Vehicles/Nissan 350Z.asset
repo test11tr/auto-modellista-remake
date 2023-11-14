@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Nissan 350Z
   m_EditorClassIdentifier: 
-  carIndex: Car4
-  carNumberIndex: 4
+  carIndex: Car5
+  carNumberIndex: 5
   carName: Nissan 350Z
   carDescription: Unleash the thrill, embrace the curves - 350Z, where performance
     meets perfection!

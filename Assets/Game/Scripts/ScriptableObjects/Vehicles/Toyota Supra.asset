@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Toyota Supra
   m_EditorClassIdentifier: 
-  carIndex: Car2
-  carNumberIndex: 2
+  carIndex: Car3
+  carNumberIndex: 3
   carName: Toyota Supra MK4
   carDescription: Where Japanese precision meets driving passion!
   vehicleClass: {fileID: 21300000, guid: 2ce1923e7ee26cd49bb9820dd6636a0a, type: 3}

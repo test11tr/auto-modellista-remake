@@ -31,6 +31,9 @@ namespace PG
         [Header("Override Vehicle")]
         [Tooltip("Buraya bir araç koyulursa sahne açıldığında kullanıcının aracı yerine koyulan araç spawn edilir.")]
         [SerializeField] private Car _overrideVehicle;
+        [Header("Tutorial Vehicle")]
+        [Tooltip("Buraya bir koyuluran araç oyunu ilk defa oynayacak kullanıcının kendi aracını alana kadar kullanacağı araçtır.")]
+        [SerializeField] private Car _tutorialVehicle;
 
         //Game Manager Logic
         [Header("Game Scene Settings")]
@@ -151,7 +154,10 @@ namespace PG
             currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
 
             if (_overrideVehicle == null)
-                p_spawnedPlayerVehicle = Instantiate(_playerCars[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
+                if(_playerCars[currentCarIndex].carPlayablePrefab == null)
+                    p_spawnedPlayerVehicle = Instantiate(_tutorialVehicle.carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
+                else
+                    p_spawnedPlayerVehicle = Instantiate(_playerCars[currentCarIndex].carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
             else
                 p_spawnedPlayerVehicle = Instantiate(_overrideVehicle.carPlayablePrefab, VehicleSpawnPoint.position, Quaternion.identity);
 

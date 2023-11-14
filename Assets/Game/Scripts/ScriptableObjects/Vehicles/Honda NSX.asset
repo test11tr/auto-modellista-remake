@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Honda NSX
   m_EditorClassIdentifier: 
-  carIndex: Car1
-  carNumberIndex: 1
+  carIndex: Car2
+  carNumberIndex: 2
   carName: Honda NSX
   carDescription: "Precision redefined, NSX \u2013 where artistry meets engineering
     for the ultimate driving experience."

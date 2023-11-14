@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Nissan Skyline R34
   m_EditorClassIdentifier: 
-  carIndex: Car0
-  carNumberIndex: 0
+  carIndex: Car1
+  carNumberIndex: 1
   carName: Nissan Skyline R34
   carDescription: Elevate your drive with the timeless power and style of the R34
   vehicleClass: {fileID: 21300000, guid: 2ce1923e7ee26cd49bb9820dd6636a0a, type: 3}

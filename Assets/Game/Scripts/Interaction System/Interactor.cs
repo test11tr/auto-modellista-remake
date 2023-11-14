@@ -23,7 +23,6 @@ namespace test11
 
         public void CheckForInteraction(int playerState)
         {
-            print(isInteractCheckable);
             if (isInteractCheckable) {
                 int layerMask = 1 << playerState;
                 Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange, ~layerMask);
@@ -50,7 +49,6 @@ namespace test11
 
         public void handleUI(bool interactable)
         {
-            print("ui: " + interactable);
             if (interactable)
             {
                 interactUIContainer.SetActive(true);

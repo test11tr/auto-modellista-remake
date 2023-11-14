@@ -117,7 +117,5 @@ namespace test11
 
             return interactionText = _interactTextData.defaultText;
         }
-
-        //
     }
 }
