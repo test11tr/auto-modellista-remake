@@ -44,6 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b942ca3cfb401646a850e6c9984d7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingCR: 0
-  defaultFirstWorld: {fileID: 0}
-  totalCR: {fileID: 0}
+  startingMoney: 100000

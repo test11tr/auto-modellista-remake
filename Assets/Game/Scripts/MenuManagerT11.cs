@@ -107,5 +107,10 @@ namespace test11
                 ColorPageParent.transform.GetChild(i).GetComponent<Image>().color = _vehicleColorSheetData.colorSheetData[i].UIButtonColor;
             }
         }
+
+        public void HandleGameManagerInputMute(bool boolean)
+        {
+            GameManagerT11.Instance.inputMute = boolean;
+        }
     }
 }
