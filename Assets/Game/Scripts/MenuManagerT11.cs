@@ -42,13 +42,15 @@ namespace test11
         public TMP_Text carMaxSpeed_bs;
         public TMP_Text car0100Time_bs;
         public TMP_Text carHorsePower_bs;
+        public TMP_Text confirmPriceText_bs;
+        public TMP_Text congratsText_bs;
         public Button buyButton_bs;
         
         [Header("Color Page Details")]
         public VehicleColorSheetData _vehicleColorSheetData;
         public GameObject ColorPageParent;
 
-        [HideInInspector] public Car _tempdata; 
+        [HideInInspector] public Car _tempdata;
 
         public void ManageVehicleInspectorPage(Car CarData)
         {
@@ -93,8 +95,10 @@ namespace test11
             carMaxSpeed_bs.text = _tempdata.carMaxSpeed.ToString() + " Kmh";
             car0100Time_bs.text = _tempdata.car0100Time.ToString() + " Sec.";
             carHorsePower_bs.text = _tempdata.carHorsePower.ToString() + " Bhp";
+            confirmPriceText_bs.text = "CONFIRM <style=\"Orange\">$</style><style=\"Bold\">" + _tempdata.carPrice.ToString() + "</b> PURCHASE?";
+            congratsText_bs.text = "Congratulations! You have purchased <style=\"Orange\">" + _tempdata.carName + "</style>!";
 
-           if (PlayerPrefs.GetInt(_tempdata.carIndex) == 0)
+            if (PlayerPrefs.GetInt(_tempdata.carIndex) == 0)
             {
                 buyButton_bs.SetActive(true);
             }
@@ -105,12 +109,22 @@ namespace test11
             for (int i = 0; i < Mathf.Min(_vehicleColorSheetData.colorSheetData.Length, ColorPageParent.transform.childCount); i++)
             {
                 ColorPageParent.transform.GetChild(i).GetComponent<Image>().color = _vehicleColorSheetData.colorSheetData[i].UIButtonColor;
+                ColorPageParent.transform.GetChild(0).GetComponent<Button>().Select();
             }
         }
 
         public void HandleGameManagerInputMute(bool boolean)
         {
             GameManagerT11.Instance.inputMute = boolean;
+        }
+
+        public void BuyVehicle()
+        {
+            print("congrats bro, you've made it!");
+            PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") - _tempdata.carPrice);
+            PlayerPrefs.SetInt(_tempdata.carIndex, 1);
+            PlayerPrefs.SetInt("CurrentCar", _tempdata.carNumberIndex);
+            // DO YOUR MAGICAL POLISH SPELLS HERE TO FUCK ANYBODY'S MIND
         }
     }
 }

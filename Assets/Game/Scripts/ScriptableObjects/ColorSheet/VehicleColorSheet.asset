@@ -20,99 +20,99 @@ MonoBehaviour:
     secondShadingMapColor: {r: 0.69803923, g: 0.69803923, b: 0.69803923, a: 1}
     highlightColor: {r: 0.6313726, g: 0.6313726, b: 0.6313726, a: 1}
     rimLightColor: {r: 1, g: 1, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
+  - colorName: Gray
+    UIButtonColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Coal
+    UIButtonColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Black
+    UIButtonColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Burgundy
+    UIButtonColor: {r: 0.4245283, g: 0.046057325, b: 0.09170696, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Red
+    UIButtonColor: {r: 0.99215686, g: 0.09019605, b: 0.18928541, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Orange
+    UIButtonColor: {r: 0.99215686, g: 0.549408, b: 0.09019605, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Yellow
+    UIButtonColor: {r: 1, g: 0.8969047, b: 0.2971698, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Green
+    UIButtonColor: {r: 0.43743777, g: 0.8962264, b: 0.13950695, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Khaki
+    UIButtonColor: {r: 0.23377067, g: 0.509434, b: 0.03123889, a: 1}
+    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
+    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
+    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
+    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
+    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
+  - colorName: Turquoise
+    UIButtonColor: {r: 0.09019605, g: 0.8671882, b: 0.99215686, a: 1}
     baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
     firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
     secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
     highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
     rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
   - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
+    UIButtonColor: {r: 0.31626022, g: 0.50434244, b: 0.9716981, a: 1}
     baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
     firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
     secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
     highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
     rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
+  - colorName: Navy Blue
+    UIButtonColor: {r: 0.14217694, g: 0.22319952, b: 0.4245283, a: 1}
     baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
     firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
     secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
     highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
     rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
+  - colorName: Purple
+    UIButtonColor: {r: 0.42783827, g: 0.09019605, b: 0.99215686, a: 1}
     baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
     firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
     secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
     highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
     rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
-    baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
-    firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
-    secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
-    highlightColor: {r: 0, g: 0.3254902, b: 0.62352943, a: 1}
-    rimLightColor: {r: 0, g: 0.5137255, b: 1, a: 1}
-  - colorName: Blue
-    UIButtonColor: {r: 0.08877712, g: 0.34908023, b: 0.990566, a: 1}
+  - colorName: Pink
+    UIButtonColor: {r: 0.99215686, g: 0.09019605, b: 0.8248159, a: 1}
     baseMapColor: {r: 0.28235295, g: 0.47843137, b: 0.8392157, a: 1}
     firstShadingMapColor: {r: 0.11764706, g: 0.27450982, b: 0.47058824, a: 1}
     secondShadingMapColor: {r: 0.20392157, g: 0.41568628, b: 0.7058824, a: 1}
