@@ -29,3 +29,10 @@ MonoBehaviour:
   carHorsePower: 140
   carVisualPrefab: {fileID: 3031622846038301546, guid: 571376087e4b3ff449e1d2dde324926c, type: 3}
   carPlayablePrefab: {fileID: 549453197428740520, guid: d0f9074725d06ce4486851e9f3f78c1d, type: 3}
+  isOwned: 0
+  colorIndex: -1
+  baseMapColor: {r: 0, g: 0, b: 0, a: 1}
+  firstShadingMapColor: {r: 0, g: 0, b: 0, a: 1}
+  secondShadingMapColor: {r: 0, g: 0, b: 0, a: 1}
+  highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  rimLightColor: {r: 0, g: 0, b: 0, a: 1}

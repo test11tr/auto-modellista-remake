@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3467759178883534627}
   - component: {fileID: 7309390986628391637}
   - component: {fileID: 7897591075459790522}
-  - component: {fileID: 1037029355283739751}
   - component: {fileID: 7306076341084059913}
   m_Layer: 6
   m_Name: Toyota Corolla AE86 Driveable
@@ -324,6 +323,8 @@ MonoBehaviour:
   SteerWheel: {fileID: 0}
   _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
   _CarData: {fileID: 11400000, guid: d36f5ce8be9c7004e8d72b0607571fbb, type: 2}
+  _vehicleColorSheetData: {fileID: 11400000, guid: 3b23a3a7f1e374446ba071f630da7d81, type: 2}
+  paintMaterial: {fileID: 2100000, guid: d79ccd0283e60f3478fffda787ba2c6d, type: 2}
 --- !u!114 &7897591075459790522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,84 +345,6 @@ MonoBehaviour:
   ReverseLights: []
   DiscHeats: []
   ActiveTurns: []
---- !u!114 &1037029355283739751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549453197428740520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43fd575a4f3b124a994e5c934a4b4b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageFactor: 1
-  MaxCollisionMagnitude: 100
-  MaxImpulseMagnitude: 35
-  MaxDeformRadiusInMaxMag: 3
-  DeformMultiplier: 0.3
-  DamageDistanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -3.0305424
-      outSlope: -3.0305424
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.035149395
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  MaxContactPoints: 5
-  MaxDamageQueueCount: 200
-  UseNoise: 1
-  NoiseSize: 1
-  CalculateNormals: 0
-  MoveCarWhileRestoring: 1
-  SmoothMeshRestore: 1
-  SmoothRestoreCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: -0.8
-      outSlope: -0.8
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.8
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: -1.4
-      outSlope: -1.4
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.7
-      outWeight: -0.1
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  SmoothRestoreSpeed: 2
-  IgnoreDeformMeshes: []
-  IgnoreDeformColliders: []
-  IgnoreFindInChildsMeshesAndColliders:
-  - {fileID: 8744893317239898333}
-  EnableLogAndGizmo: 0
 --- !u!64 &7306076341084059913
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -174,7 +174,6 @@ GameObject:
   - component: {fileID: 6607634198499231390}
   - component: {fileID: 4594122591029980564}
   - component: {fileID: 6391445652954455793}
-  - component: {fileID: 5426817870043850281}
   - component: {fileID: 7847051806706511306}
   m_Layer: 6
   m_Name: Nissan Skyline R34 Driveable
@@ -486,6 +485,8 @@ MonoBehaviour:
   SteerWheel: {fileID: 0}
   _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
   _CarData: {fileID: 11400000, guid: 056f01b625496cc4aab4fd88717db0dc, type: 2}
+  _vehicleColorSheetData: {fileID: 11400000, guid: 3b23a3a7f1e374446ba071f630da7d81, type: 2}
+  paintMaterial: {fileID: 2100000, guid: 559c527f8866849459db6a6dce8f4fbf, type: 2}
 --- !u!114 &6391445652954455793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,84 +507,6 @@ MonoBehaviour:
   ReverseLights: []
   DiscHeats: []
   ActiveTurns: []
---- !u!114 &5426817870043850281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962977379723067260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a43fd575a4f3b124a994e5c934a4b4b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageFactor: 1
-  MaxCollisionMagnitude: 100
-  MaxImpulseMagnitude: 35
-  MaxDeformRadiusInMaxMag: 3
-  DeformMultiplier: 0.3
-  DamageDistanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -3.0305424
-      outSlope: -3.0305424
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.035149395
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  MaxContactPoints: 5
-  MaxDamageQueueCount: 200
-  UseNoise: 1
-  NoiseSize: 1
-  CalculateNormals: 0
-  MoveCarWhileRestoring: 1
-  SmoothMeshRestore: 1
-  SmoothRestoreCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: -0.8
-      outSlope: -0.8
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.8
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: -1.4
-      outSlope: -1.4
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.7
-      outWeight: -0.1
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  SmoothRestoreSpeed: 2
-  IgnoreDeformMeshes: []
-  IgnoreDeformColliders: []
-  IgnoreFindInChildsMeshesAndColliders:
-  - {fileID: 7438950050817844304}
-  EnableLogAndGizmo: 0
 --- !u!64 &7847051806706511306
 MeshCollider:
   m_ObjectHideFlags: 0

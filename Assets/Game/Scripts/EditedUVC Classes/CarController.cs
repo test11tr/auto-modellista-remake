@@ -36,6 +36,13 @@ namespace PG
         public Car _CarData;
         string interactionText;
 
+        [Header("PaintData")]
+        public VehicleColorSheetData _vehicleColorSheetData;
+        public Material paintMaterial;
+        Material instancePaintMaterial;
+        public bool isTutorialVehicle;
+        public int tutorialVehicleColorIndex;
+
         protected override void Awake ()
         {
             base.Awake ();
@@ -54,6 +61,9 @@ namespace PG
             {
                 SteerWheelStartXAngle = SteerWheel.localRotation.eulerAngles.x;
             }
+
+            instancePaintMaterial = paintMaterial;
+            paintVehicle();
         }
 
         protected override void FixedUpdate ()
@@ -179,6 +189,37 @@ namespace PG
             }
 
             return interactionText = _interactTextData.defaultText;
+        }
+
+        public void paintVehicle()
+        {
+            if (GameManagerT11.Instance.sceneType == GameManagerT11.SceneTypes.VehicleDealer)
+            {
+                instancePaintMaterial.SetColor(Shader.PropertyToID("_BaseColor"), _vehicleColorSheetData.colorSheetData[0].baseMapColor);
+                instancePaintMaterial.SetColor(Shader.PropertyToID("_1st_ShadeColor"), _vehicleColorSheetData.colorSheetData[0].firstShadingMapColor);
+                instancePaintMaterial.SetColor(Shader.PropertyToID("_2nd_ShadeColor"), _vehicleColorSheetData.colorSheetData[0].secondShadingMapColor);
+                instancePaintMaterial.SetColor(Shader.PropertyToID("_HighColor"), _vehicleColorSheetData.colorSheetData[0].highlightColor);
+                instancePaintMaterial.SetColor(Shader.PropertyToID("_RimLightColor"), _vehicleColorSheetData.colorSheetData[0].rimLightColor);
+            }
+            else
+            {
+                if (_CarData.isOwned)
+                {
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_BaseColor"), _CarData.baseMapColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_1st_ShadeColor"), _CarData.firstShadingMapColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_2nd_ShadeColor"), _CarData.secondShadingMapColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_HighColor"), _CarData.highlightColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_RimLightColor"), _CarData.rimLightColor);
+                }
+                else if (isTutorialVehicle)
+                {
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_BaseColor"), _vehicleColorSheetData.colorSheetData[tutorialVehicleColorIndex].baseMapColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_1st_ShadeColor"), _vehicleColorSheetData.colorSheetData[tutorialVehicleColorIndex].firstShadingMapColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_2nd_ShadeColor"), _vehicleColorSheetData.colorSheetData[tutorialVehicleColorIndex].secondShadingMapColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_HighColor"), _vehicleColorSheetData.colorSheetData[tutorialVehicleColorIndex].highlightColor);
+                    instancePaintMaterial.SetColor(Shader.PropertyToID("_RimLightColor"), _vehicleColorSheetData.colorSheetData[tutorialVehicleColorIndex].rimLightColor);
+                }
+            }
         }
     }
 

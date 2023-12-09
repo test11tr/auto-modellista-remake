@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carIndex: Car0
   carNumberIndex: 0
-  carName: No Vehicle
+  carName: 
   carDescription: 
   vehicleClass: {fileID: 0}
   vehicleBrand: {fileID: 0}
@@ -28,3 +28,10 @@ MonoBehaviour:
   carHorsePower: 0
   carVisualPrefab: {fileID: 0}
   carPlayablePrefab: {fileID: 0}
+  isOwned: 0
+  colorIndex: -1
+  baseMapColor: {r: 0, g: 0, b: 0, a: 1}
+  firstShadingMapColor: {r: 0, g: 0, b: 0, a: 1}
+  secondShadingMapColor: {r: 0, g: 0, b: 0, a: 1}
+  highlightColor: {r: 0, g: 0, b: 0, a: 1}
+  rimLightColor: {r: 0, g: 0, b: 0, a: 1}

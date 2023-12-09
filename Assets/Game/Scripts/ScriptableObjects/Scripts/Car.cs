@@ -31,11 +31,12 @@ namespace test11
         public GameObject carPlayablePrefab;
 
         [Header("Car Personalization Data")]
-        [SerializeField] private bool isOwned;
-        [SerializeField] private Color baseMapColor;
-        [SerializeField] private Color firstShadingMapColor;
-        [SerializeField] private Color secondShadingMapColor;
-        [SerializeField] private Color highlightColor;
-        [SerializeField] private Color rimLightColor;
+        [SerializeField] public bool isOwned;
+        [SerializeField] public int colorIndex = -1;
+        [SerializeField] public Color baseMapColor;
+        [SerializeField] public Color firstShadingMapColor;
+        [SerializeField] public Color secondShadingMapColor;
+        [SerializeField] public Color highlightColor;
+        [SerializeField] public Color rimLightColor;
     }
 }

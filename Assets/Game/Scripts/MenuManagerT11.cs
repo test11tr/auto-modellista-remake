@@ -49,6 +49,7 @@ namespace test11
         [Header("Color Page Details")]
         public VehicleColorSheetData _vehicleColorSheetData;
         public GameObject ColorPageParent;
+        int selectedColor;
 
         [HideInInspector] public Car _tempdata;
 
@@ -113,6 +114,12 @@ namespace test11
             }
         }
 
+        public void ManageSelectedColorIndex(int index)
+        {
+            selectedColor = index;
+            print(_vehicleColorSheetData.colorSheetData[selectedColor].colorName);
+        }
+
         public void HandleGameManagerInputMute(bool boolean)
         {
             GameManagerT11.Instance.inputMute = boolean;
@@ -125,6 +132,7 @@ namespace test11
             PlayerPrefs.SetInt(_tempdata.carIndex, 1);
             PlayerPrefs.SetInt("CurrentCar", _tempdata.carNumberIndex);
             // DO YOUR MAGICAL POLISH SPELLS HERE TO FUCK ANYBODY'S MIND
+            GameManagerT11.Instance.VehicleBought(_tempdata.carNumberIndex, selectedColor, true);
         }
     }
 }

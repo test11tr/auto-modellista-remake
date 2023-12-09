@@ -2062,7 +2062,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9035366526504978777}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1439953843844288144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,7 +2864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5315612703530997819}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1826957781433456545
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4167,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4398032470250075635}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2568701954034006478
 GameObject:
   m_ObjectHideFlags: 0
@@ -4646,7 +4682,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7976516513309875894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2928840167926744500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,7 +4980,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2413790721382670012}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3090769374552651364
 GameObject:
   m_ObjectHideFlags: 0
@@ -6124,7 +6184,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5197252760374169603}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4298446177065221827
 GameObject:
   m_ObjectHideFlags: 0
@@ -7121,7 +7193,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8476471338944799084}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4968338403948055613
 GameObject:
   m_ObjectHideFlags: 0
@@ -7392,7 +7476,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9161259249298648294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5233267941637057726
 GameObject:
   m_ObjectHideFlags: 0
@@ -7528,7 +7624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7818198364253464108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5277337508653584532
 GameObject:
   m_ObjectHideFlags: 0
@@ -8274,7 +8382,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7260577169134838408}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5898399154608114721
 GameObject:
   m_ObjectHideFlags: 0
@@ -9292,7 +9412,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8387577011255109261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6551285386739522168
 GameObject:
   m_ObjectHideFlags: 0
@@ -9652,7 +9784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7462529656029212376}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6797237421449944719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10057,7 +10201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1402139355225237230}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7005990401611691406
 GameObject:
   m_ObjectHideFlags: 0
@@ -10548,7 +10704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
-  system: {fileID: 0}
   DealerVehicleInspectMenu: {fileID: 6551285386739522168}
   vehicleName_im: {fileID: 2802346850389884809}
   vehicleDescription_im: {fileID: 6669721578142112274}
@@ -10714,7 +10869,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4353627432835521363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 13
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7350748399212249471
 GameObject:
   m_ObjectHideFlags: 0
@@ -12556,7 +12723,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6708195799491657309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4497455470170488176}
+        m_TargetAssemblyTypeName: test11.MenuManagerT11, Assembly-CSharp
+        m_MethodName: ManageSelectedColorIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8526956279053725876
 GameObject:
   m_ObjectHideFlags: 0

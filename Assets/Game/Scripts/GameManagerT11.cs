@@ -28,6 +28,7 @@ namespace PG
         //VehicleList
         [Header("Player Vehicles")]
         [SerializeField] private Car[] _playerCars;
+        public VehicleColorSheetData _vehicleColorSheetData;
         [Header("Override Vehicle")]
         [Tooltip("Buraya bir araç koyulursa sahne açıldığında kullanıcının aracı yerine koyulan araç spawn edilir.")]
         [SerializeField] private Car _overrideVehicle;
@@ -307,6 +308,18 @@ namespace PG
                 Camera.transform.localPosition = Vector3.zero;
                 Camera.transform.localRotation = Quaternion.identity;
             }
+        }
+
+        //Vehicle Bought - Manage Color and personalization
+        public void VehicleBought(int _carIndex, int _colorIndex, bool _isOwned)
+        {
+            _playerCars[_carIndex].isOwned = _isOwned;
+            _playerCars[_carIndex].colorIndex = _colorIndex;
+            _playerCars[_carIndex].baseMapColor = _vehicleColorSheetData.colorSheetData[_colorIndex].baseMapColor;
+            _playerCars[_carIndex].firstShadingMapColor = _vehicleColorSheetData.colorSheetData[_colorIndex].firstShadingMapColor;
+            _playerCars[_carIndex].secondShadingMapColor = _vehicleColorSheetData.colorSheetData[_colorIndex].secondShadingMapColor;
+            _playerCars[_carIndex].highlightColor = _vehicleColorSheetData.colorSheetData[_colorIndex].highlightColor;
+            _playerCars[_carIndex].rimLightColor = _vehicleColorSheetData.colorSheetData[_colorIndex].rimLightColor;
         }
 
         void OnDrawGizmos()

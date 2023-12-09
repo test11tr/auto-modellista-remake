@@ -21477,8 +21477,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6d75da96b925baa46bf6104d3d4ea91f, type: 2}
   - {fileID: 11400000, guid: d36f5ce8be9c7004e8d72b0607571fbb, type: 2}
   - {fileID: 11400000, guid: f844c4ede90baeb44a09296d40d2ce8b, type: 2}
+  _vehicleColorSheetData: {fileID: 11400000, guid: 3b23a3a7f1e374446ba071f630da7d81, type: 2}
   _overrideVehicle: {fileID: 0}
-  _tutorialVehicle: {fileID: 11400000, guid: f844c4ede90baeb44a09296d40d2ce8b, type: 2}
+  _tutorialVehicle: {fileID: 11400000, guid: cbbea15ad20e19543ba89407775afe3c, type: 2}
   startWithVehicle: 1
   startInVehicle: 0
   canExitVehicle: 1

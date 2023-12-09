@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 5024304692077778082}
   - component: {fileID: 2312802239221224199}
   m_Layer: 6
-  m_Name: Nissan 350Z Driveable
+  m_Name: Nissan 350Z - Tutorial Driveable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,6 +714,8 @@ MonoBehaviour:
   _CarData: {fileID: 11400000, guid: f844c4ede90baeb44a09296d40d2ce8b, type: 2}
   _vehicleColorSheetData: {fileID: 11400000, guid: 3b23a3a7f1e374446ba071f630da7d81, type: 2}
   paintMaterial: {fileID: 2100000, guid: 31a5085c925c7a74183dc9cf53ad8990, type: 2}
+  isTutorialVehicle: 1
+  tutorialVehicleColorIndex: 8
 --- !u!114 &5024304692077778082
 MonoBehaviour:
   m_ObjectHideFlags: 0
