@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -53,6 +54,9 @@ namespace PG
         {
             LightIsOn = !EnableOnStart;
             Switch (EnableOnStart, forceSwitch: true);
+            //for PreInstantiated Vehicles
+            OnLightMaterial.SetColor(Shader.PropertyToID("_Emissive_Color"), UnityEngine.Color.black);
+            
         }
 
         /// <summary>

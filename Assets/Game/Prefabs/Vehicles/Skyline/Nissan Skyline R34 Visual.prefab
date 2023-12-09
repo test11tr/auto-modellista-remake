@@ -65,7 +65,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
   - {fileID: 2100000, guid: eb7cccbca8e334d4c8ac93117ca745c9, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,7 +154,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: f99b1140db66ac34f8fd9992fcb89c4e, type: 2}
   - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
   - {fileID: 2100000, guid: 5a0583b2b6d17fd489e79d7330b70c2a, type: 2}
-  - {fileID: 2100000, guid: 947a5bb2c557d714bab89fe2bf887b5a, type: 2}
+  - {fileID: 2100000, guid: b5f5a5a019d1d5b4da6ee50f86da85c4, type: 2}
   - {fileID: 2100000, guid: 4c2a59ee7b65b7045b5b16db5d9ac428, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -241,7 +241,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -327,7 +327,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -496,7 +496,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 880595657b9f86e4592243fbb3757d56, type: 2}
   - {fileID: 2100000, guid: f1017cd17eb3b594e9e8ba75e11c0d5a, type: 2}
   - {fileID: 2100000, guid: 2c97fa8a866b1984e9acb06357a9033c, type: 2}
-  - {fileID: 2100000, guid: 0b189bde20116b34eb4f43316d3f8160, type: 2}
+  - {fileID: 2100000, guid: 3667175cb80d59a4b8d10ee35ce079b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -527,6 +527,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2588404029381808431}
+  - component: {fileID: 1233357457639963487}
+  - component: {fileID: 3838772812025413575}
   m_Layer: 0
   m_Name: Nissan Skyline R34 Visual
   m_TagString: Untagged
@@ -544,8 +546,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1.65}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7759164067974714799}
   - {fileID: 2125801417669927024}
@@ -555,3 +557,38 @@ Transform:
   - {fileID: 3558817387497051525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1233357457639963487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063715114740488226}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8054181, y: 0.5157359, z: 1.9501998}
+  m_Center: {x: -0.023391277, y: 0.31776258, z: 0.062625885}
+--- !u!114 &3838772812025413575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063715114740488226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87a396a0d2f18e42931ef3e07b3c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
+  _CarData: {fileID: 11400000, guid: 056f01b625496cc4aab4fd88717db0dc, type: 2}

@@ -266,6 +266,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9135494280096353315}
+  - component: {fileID: 792370340454250684}
+  - component: {fileID: 5522669448941460902}
   m_Layer: 0
   m_Name: Honda NSX Visual
   m_TagString: Untagged
@@ -283,8 +285,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1.65}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7447319489552714178}
   - {fileID: 4467840587840655695}
@@ -294,6 +296,41 @@ Transform:
   - {fileID: 1229519446959757952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &792370340454250684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196333457677523792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8286942, y: 0.4466004, z: 1.8948358}
+  m_Center: {x: -0.006748885, y: 0.24821554, z: 0.06108159}
+--- !u!114 &5522669448941460902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196333457677523792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87a396a0d2f18e42931ef3e07b3c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
+  _CarData: {fileID: 11400000, guid: 2f834c64b06836d4b8c146348cac4a90, type: 2}
 --- !u!1 &6800002513435357002
 GameObject:
   m_ObjectHideFlags: 0

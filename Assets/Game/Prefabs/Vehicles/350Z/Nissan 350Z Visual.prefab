@@ -274,6 +274,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4833392505513704141}
+  - component: {fileID: 1846839424359641670}
+  - component: {fileID: 6873287328691894713}
   m_Layer: 0
   m_Name: Nissan 350Z Visual
   m_TagString: Untagged
@@ -291,8 +293,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.909, y: 0, z: -2.123}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.65, y: 1.65, z: 1.65}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3799159796649307260}
   - {fileID: 4123099167885895747}
@@ -301,6 +303,41 @@ Transform:
   - {fileID: 3421088837188776236}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1846839424359641670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488442760959653833}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8410156, y: 0.51762795, z: 1.8815994}
+  m_Center: {x: 0.01180695, y: 0.31096983, z: 0.016233474}
+--- !u!114 &6873287328691894713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488442760959653833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87a396a0d2f18e42931ef3e07b3c905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactTextData: {fileID: 11400000, guid: 6476637fb146aa844bc31cd7e47deab0, type: 2}
+  _CarData: {fileID: 11400000, guid: f844c4ede90baeb44a09296d40d2ce8b, type: 2}
 --- !u!1 &7908586436470402756
 GameObject:
   m_ObjectHideFlags: 0
